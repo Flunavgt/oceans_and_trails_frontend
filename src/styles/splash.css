@@ -10,7 +10,7 @@
     position: absolute;
     color: white;
     z-index: 1000;
-    top: 22%;
+    top: 40%;
     right: 30%;
     width: 75%;
     padding-left: 20%;
@@ -45,7 +45,7 @@
     padding: 10px 10px;
     z-index: 1000;
     position: absolute;
-    top: 55%;
+    top: 75%;
     left: 45%;
   }
 
@@ -54,8 +54,8 @@
     text-align: center;
     z-index: 1000;
     position: absolute;
-    top: 40%;
-    right: 30%;
+    top: 50%;
+    right: 40%;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 40px;
   }
