@@ -1,62 +1,62 @@
 .splash {
-    justify-content: center;
-    margin: 0%;
-    background-color: white;
-  }
+  justify-content: center;
+  margin: 0%;
+  background-color: white;
+}
 
 .splashNav {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    color: white;
-    z-index: 1000;
-    top: 40%;
-    right: 30%;
-    width: 75%;
-    padding-left: 20%;
-    margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  color: white;
+  z-index: 1000;
+  top: 40%;
+  right: 30%;
+  width: 75%;
+  padding-left: 20%;
+  margin-right: auto;
 }
-  
+
 .fa-solid {
-    color: white;
-    margin-right: 120%;
+  color: white;
+  margin-right: 120%;
 }
 
 .fa-glass {
-    margin-left: 90%;
+  margin-left: 90%;
 }
 
-  .splashCruise {
-    width: 90%;
-    height: 50%;
-    margin: 8%;
-    margin-left: 5%;
-    padding: 5%;
-    background-color: rgb(252, 169, 17);
-    position: relative;
-  }
+.splashCruise {
+  width: 90%;
+  height: 50%;
+  margin: 8%;
+  margin-left: 5%;
+  padding: 5%;
+  background-color: rgb(252, 169, 17);
+  position: relative;
+}
 
-  .splashButton {
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    background-color: rgb(86, 219, 86);
-    border: none;
-    padding: 10px 20px;
-    z-index: 1000;
-    position: absolute;
-    top: 75%;
-    left: 45%;
-    border-radius: 15px;
-  }
+.splashButton {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(86, 219, 86);
+  border: none;
+  padding: 10px 20px;
+  z-index: 1000;
+  position: absolute;
+  top: 75%;
+  left: 45%;
+  border-radius: 15px;
+}
 
-  .splashTitle {
-    color: black;
-    text-align: center;
-    z-index: 1000;
-    position: absolute;
-    top: 50%;
-    right: 40%;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 40px;
-  }
+.splashTitle {
+  color: black;
+  text-align: center;
+  z-index: 1000;
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 40px;
+}

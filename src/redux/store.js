@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import toursReducer, { getTourData } from "./tours/toursSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import toursReducer, { getTourData } from './tours/toursSlice';
 
 const store = configureStore({
   reducer: {
