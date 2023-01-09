@@ -10,7 +10,7 @@ nav {
   background-color: white;
   padding: 2rem 1rem 1rem 1rem;
   transition: transform 1s;
-  margin-right: 5px solid gray;
+  margin-right: 5px;
   box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -59,11 +59,11 @@ nav {
   height: 100%;
 }
 
-.logo-title{
-	text-align: center;
-	text-decoration: none;
-	font-size: 3rem;
-	font-weight: 800;
+.logo-title {
+  text-align: center;
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 800;
 }
 
 .nav-link {
@@ -116,6 +116,7 @@ nav {
     display: flex;
     align-items: center;
   }
+
   nav {
     width: 70%;
     top: 38px;
