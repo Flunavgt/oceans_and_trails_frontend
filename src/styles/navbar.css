@@ -12,6 +12,7 @@ nav {
   transition: transform 1s;
   margin-right: 5px solid gray;
   box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1200;
 }
 
 .navbar {
