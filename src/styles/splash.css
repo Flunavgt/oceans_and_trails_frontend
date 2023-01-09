@@ -1,7 +1,8 @@
 .splash {
-  justify-content: center;
   margin: 0%;
   background-color: white;
+  position: relative;
+  text-align: center;
 }
 
 .splashNav {
@@ -10,11 +11,10 @@
   position: absolute;
   color: white;
   z-index: 1000;
-  top: 40%;
-  right: 30%;
-  width: 75%;
-  padding-left: 20%;
-  margin-right: auto;
+  top: 20%;
+  right: 20%;
+  width: 100%;
+  padding-left: 35%;
 }
 
 .fa-solid {
@@ -27,13 +27,15 @@
 }
 
 .splashCruise {
-  width: 90%;
-  height: 50%;
+  display: block;
+  width: 100%;
+  height: auto;
   margin: 8%;
   margin-left: 5%;
   padding: 5%;
   background-color: rgb(252, 169, 17);
   position: relative;
+  text-align: center;
 }
 
 .splashButton {
@@ -45,8 +47,7 @@
   padding: 10px 20px;
   z-index: 1000;
   position: absolute;
-  top: 75%;
-  left: 45%;
+  top: 45%;
   border-radius: 15px;
 }
 
@@ -55,8 +56,8 @@
   text-align: center;
   z-index: 1000;
   position: absolute;
-  top: 50%;
-  right: 40%;
+  width: 100%;
+  top: 30%;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 40px;
+  font-size: 50px;
 }
