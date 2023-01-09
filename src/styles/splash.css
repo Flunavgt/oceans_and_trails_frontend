@@ -42,11 +42,12 @@
     text-align: center;
     background-color: rgb(86, 219, 86);
     border: none;
-    padding: 10px 10px;
+    padding: 10px 20px;
     z-index: 1000;
     position: absolute;
     top: 75%;
     left: 45%;
+    border-radius: 15px;
   }
 
   .splashTitle {
