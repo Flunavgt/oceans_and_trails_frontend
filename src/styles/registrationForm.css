@@ -10,13 +10,15 @@ body {
   width: 550px;
   margin: 20px auto;
   padding: 20px;
-
-  /* height: 600px; */
+  justify-content: center;
 }
 
 .form-body {
   text-align: left;
   padding: 20px 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-body > * {

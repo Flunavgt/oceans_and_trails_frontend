@@ -52,7 +52,7 @@ function RegistrationForm() {
                   <input className="form__input" type="password"  id="password" placeholder="Password"/>
               </div>
               <div className="confirm-password">
-                  <label className="form__label" for="confirmPassword">Confirm Password </label>
+                  <label className="form__label" for="confirmPassword">Confirm Password </label><br/>
                   <input className="form__input" type="password" id="confirmPassword" placeholder="Confirm Password"/>
               </div>
           </div>
