@@ -2,19 +2,15 @@ import React, {useState} from 'react';
 import '../../styles/registrationForm.css';
 
 function RegistrationForm() {
-    const [firstName, setFirstName] = useState(null);
-    const [lastName, setLastName] = useState(null);
+    const [name, setName] = useState(null);
     const [email, setEmail] = useState(null);
     const [password,setPassword] = useState(null);
     const [confirmPassword,setConfirmPassword] = useState(null);
 
     const handleInputChange = (e) => {
         const {id , value} = e.target;
-        if(id === "firstName"){
-            setFirstName(value);
-        }
-        if(id === "lastName"){
-            setLastName(value);
+        if(id === "Name"){
+            seName(value);
         }
         if(id === "email"){
             setEmail(value);
@@ -31,7 +27,6 @@ function RegistrationForm() {
     const handleSubmit  = () => {
         let obj = {
             firstName : firstName,
-            lastName:lastName,
             email:email,
             password:password,
             confirmPassword:confirmPassword,
