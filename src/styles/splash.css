@@ -1,0 +1,63 @@
+.splash {
+  margin: 0%;
+  background-color: white;
+  position: relative;
+  text-align: center;
+}
+
+.splashNav {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  color: white;
+  z-index: 1000;
+  top: 20%;
+  right: 20%;
+  width: 100%;
+  padding-left: 35%;
+}
+
+.fa-solid {
+  color: white;
+  margin-right: 120%;
+}
+
+.fa-glass {
+  margin-left: 90%;
+}
+
+.splashCruise {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 8%;
+  margin-left: 5%;
+  padding: 5%;
+  background-color: rgb(252, 169, 17);
+  position: relative;
+  text-align: center;
+}
+
+.splashButton {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(86, 219, 86);
+  border: none;
+  padding: 10px 20px;
+  z-index: 1000;
+  position: absolute;
+  top: 45%;
+  border-radius: 15px;
+}
+
+.splashTitle {
+  color: black;
+  text-align: center;
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 50px;
+}

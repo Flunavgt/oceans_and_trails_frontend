@@ -1,0 +1,92 @@
+.container {
+  width: 75%;
+  height: 100%;
+  background: #fff;
+}
+
+.title-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.title-main h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #000;
+}
+
+.title-main h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgb(163, 162, 162);
+}
+
+.dot {
+  color: gray;
+  font-size: 1.5rem;
+}
+
+.tour-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.content p {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.icons i {
+  font-size: 1.2rem;
+  color: rgb(163, 162, 162);
+  padding: 5px;
+}
