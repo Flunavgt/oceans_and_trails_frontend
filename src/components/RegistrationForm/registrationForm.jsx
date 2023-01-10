@@ -43,29 +43,28 @@ function RegistrationForm() {
     }
 
     return(
-      <div className="form">
-          <h1 className='form-title'>Registration</h1>
-          <div className="form-body">
-              <div className="username">
-                  <input className="form__input" type="text" id="firstName" placeholder="First Name"/>
-              </div>
-              <div className="lastname">
-                  <input  type="text" name="" id="lastName"  className="form__input"placeholder="LastName"/>
-              </div>
-              <div className="email">
-                  <input  type="email" id="email" className="form__input" placeholder="Email"/>
-              </div>
-              <div className="password">
-                  <input className="form__input" type="password"  id="password" placeholder="Password"/>
-              </div>
-              <div className="confirm-password">
-                  <input className="form__input" type="password" id="confirmPassword" placeholder="Confirm Password"/>
-              </div>
-          </div>
-          <div class="footer">
-              <button type="submit" class="btn">Register</button>
-          </div>
-      </div>      
+     <div className='formCont'>
+        <div className="form">
+            <h1 className='form-title'>Registration</h1>
+            <div className="form-body">
+                <div className="username">
+                    <input className="form__input" type="text" id="firstName" placeholder="Name"/>
+                </div>
+                <div className="email">
+                    <input  type="email" id="email" className="form__input" placeholder="Email"/>
+                </div>
+                <div className="password">
+                    <input className="form__input" type="password"  id="password" placeholder="Password"/>
+                </div>
+                <div className="confirm-password">
+                    <input className="form__input" type="password" id="confirmPassword" placeholder="Confirm Password"/>
+                </div>
+            </div>
+            <div class="footer">
+                <button type="submit" class="register-btn">Register</button>
+            </div>
+        </div>
+      </div>
     )       
 }
 export default RegistrationForm;

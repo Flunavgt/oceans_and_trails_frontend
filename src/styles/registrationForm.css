@@ -7,15 +7,22 @@ body {
 .form {
   background-color: white;
   border-radius: 5px;
-  width: 550px;
+  width: 750px;
   margin: 20px auto;
   padding: 20px;
   justify-content: center;
+  background-image: url('../assets/cocktailImage.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .form-title {
   text-align: center;
-  margin: 10%;
+  font-weight: bolder;
+  margin: 5%;
+  -webkit-text-stroke: 1px white;
 }
 
 .form-body {
@@ -40,4 +47,10 @@ body {
 
 .footer {
   text-align: center;
+}
+
+.register-btn {
+  color: white;
+  padding: 10px 10px;
+  background-color: rgb(22, 159, 201);
 }
