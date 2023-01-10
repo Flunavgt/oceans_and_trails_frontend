@@ -5,6 +5,7 @@ import Home from './components/Home/Home'
 import "./index.css";
 import Reservation from './components/Reservation/Reservation';
 import Tour from './components/Tour/Tour';
+import RegistrationForm from './components/RegistrationForm/registrationForm';
 
 function App() {
 	const [navVisible, showNavbar] = useState(false);
@@ -33,6 +34,11 @@ function App() {
 					<Route path='/settings' element={
 						<div className={!navVisible ? "page" : "page page-with-navbar"}>
 							<h1>Settings</h1>
+						</div>
+					}/>
+					<Route path='/registration' element={
+						<div className={!navVisible ? "page" : "page page-with-navbar"}>
+							<RegistrationForm />
 						</div>
 					}/>
 				</Routes>
