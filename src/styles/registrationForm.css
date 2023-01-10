@@ -22,7 +22,7 @@ body {
   text-align: center;
   font-weight: bolder;
   margin: 5%;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 0.5px white;
 }
 
 .form-body {
