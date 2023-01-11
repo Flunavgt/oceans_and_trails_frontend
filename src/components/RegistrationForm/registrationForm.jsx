@@ -5,16 +5,16 @@ import { setAuthToken } from '../setAuthToken()';
 
 function RegistrationForm() {
     const [user, setUser] = useState({
-       /*  name: 'tester1', */
+        name: 'tester1',
         email: 'tester1@tester.com',
         password: 'tester1',
     });
     const loginPayload = {
-        email: 'eve.holt@reqres.in',
-        password: 'cityslicka'
+        email: 'tester1@tester.com',
+        password: 'tester1',
       }
     
-      axios.post("https://oceans-api.onrender.com/api/v1/users/registrations", loginPayload)
+      axios.post("https://oceans-api.onrender.com/api/v1/registrations", loginPayload)
         .then(response => {
           //get token from response
           const token  =  response.data.token;
@@ -35,9 +35,9 @@ function RegistrationForm() {
         <div className="form">
             <h1 className='form-title'>Registration</h1>
             <div className="form-body">
-                {/* <div className="username">
+                <div className="username">
                     <input className="form__input" type="text" id="firstName" placeholder="Name"/>
-                </div> */}
+                </div>
                 <div className="email">
                     <input  type="email" id="email" className="form__input" placeholder="Email"/>
                 </div>

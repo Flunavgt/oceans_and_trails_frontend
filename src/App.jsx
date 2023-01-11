@@ -6,6 +6,7 @@ import "./index.css";
 import Reservation from './components/Reservation/Reservation';
 import Tour from './components/Tour/Tour';
 import RegistrationForm from './components/RegistrationForm/registrationForm';
+import { setAuthToken } from './components/setAuthToken()';
 
 function App() {
 	const [navVisible, showNavbar] = useState(false);
