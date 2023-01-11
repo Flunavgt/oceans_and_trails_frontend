@@ -9,7 +9,7 @@ import RegistrationForm from './components/RegistrationForm/registrationForm';
 
 function App() {
 	const [navVisible, showNavbar] = useState(false);
-
+	
 	return (
 		<BrowserRouter >
 			<div className="App">
@@ -45,6 +45,11 @@ function App() {
 			</div>
 		</BrowserRouter>
   );
+}
+//check jwt token
+const token = localStorage.getItem("token");
+if (token) {
+	setAuthToken(token);
 }
 
 export default App;

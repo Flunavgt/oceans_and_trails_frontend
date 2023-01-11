@@ -1,50 +1,43 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 import '../../styles/registrationForm.css';
+import { setAuthToken } from '../setAuthToken()';
 
 function RegistrationForm() {
-    const [name, setName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [password,setPassword] = useState(null);
-    const [confirmPassword,setConfirmPassword] = useState(null);
-
-    const handleInputChange = (e) => {
-        const {id , value} = e.target;
-        if(id === "Name"){
-            seName(value);
-        }
-        if(id === "email"){
-            setEmail(value);
-        }
-        if(id === "password"){
-            setPassword(value);
-        }
-        if(id === "confirmPassword"){
-            setConfirmPassword(value);
-        }
-
-    }
-
-    const handleSubmit  = () => {
-        let obj = {
-            firstName : firstName,
-            email:email,
-            password:password,
-            confirmPassword:confirmPassword,
-        }       
-    const newPostKey = push(child(ref(database), 'posts')).key;
-    const updates = {};
-    updates['/' + newPostKey] = obj
-    return update(ref(database), updates);
-    }
+    const [user, setUser] = useState({
+       /*  name: 'tester1', */
+        email: 'tester1@tester.com',
+        password: 'tester1',
+    });
+    const loginPayload = {
+        email: 'eve.holt@reqres.in',
+        password: 'cityslicka'
+      }
+    
+      axios.post("https://oceans-api.onrender.com/api/v1/users/registrations", loginPayload)
+        .then(response => {
+          //get token from response
+          const token  =  response.data.token;
+    
+          //set JWT token to local
+          localStorage.setItem("token", token);
+    
+          //set token to axios common header
+          setAuthToken(token);
+    
+   //redirect user to home page
+          window.location.href = '/'
+        })
+        .catch(err => console.log(err));
 
     return(
      <div className='formCont'>
         <div className="form">
             <h1 className='form-title'>Registration</h1>
             <div className="form-body">
-                <div className="username">
+                {/* <div className="username">
                     <input className="form__input" type="text" id="firstName" placeholder="Name"/>
-                </div>
+                </div> */}
                 <div className="email">
                     <input  type="email" id="email" className="form__input" placeholder="Email"/>
                 </div>
@@ -55,11 +48,13 @@ function RegistrationForm() {
                     <input className="form__input" type="password" id="confirmPassword" placeholder="Confirm Password"/>
                 </div>
             </div>
-            <div class="footer">
-                <button type="submit" class="register-btn">Register</button>
+            <div className="footer">
+                <button type="submit" onClick={() => setUser(user)} 
+                className="register-btn">Register</button>
             </div>
         </div>
       </div>
     )       
-}
+};
+
 export default RegistrationForm;
