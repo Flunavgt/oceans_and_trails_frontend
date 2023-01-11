@@ -14,7 +14,7 @@ function RegistrationForm() {
         password: 'tester1',
       }
     
-      axios.post("https://oceans-api.onrender.com/api/v1/registrations", loginPayload)
+      axios.post("https://oceans-api.onrender.com/api/v1/sessions", loginPayload)
         .then(response => {
           //get token from response
           const token  =  response.data.token;
