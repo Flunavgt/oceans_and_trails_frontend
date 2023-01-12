@@ -128,3 +128,8 @@ nav {
     display: none;
   }
 }
+
+.logout {
+  border: none;
+  background-color: transparent;
+}

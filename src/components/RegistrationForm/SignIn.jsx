@@ -1,63 +1,67 @@
 import React from 'react';
-import axios from 'axios';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const SignIn = () => {
-  const [user, setUser] = useState({
-    name: 'tester1',
-    email: 'tester1@tester.com',
-    password: 'tester1',
-});
-const loginPayload = {
-    email: 'tester1@tester.com',
-    password: 'tester1',
-  }
-  const navigate = useNavigate();
-  
-  const signIn = async () => {
-    try {
-      setIsLoading(true);
-      const response = await axios({
-        method: 'post',
-        url: 'https://oceans-api.onrender.com/api/v1/sessions',
-        data: {
-          email,
-          password
-        }
-      });
-      if (!response?.data?.token) {
-        console.log('Something went wrong during signing in: ', response);
-        return;
+async function loginUser(credentials) {
+  return fetch('https://oceans-api.onrender.com/api/v1/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(credentials)
+  })
+    .then(data => data.json())
+ }
+
+function SignIn() {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+ 
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const response = await loginUser({
+      email,
+      password
+    });
+    if ('token' in response) {
+      "Success", response.message, "success", {
+        buttons: false,
+        timer: 2000,
       }
-      storeTokenInLocalStorage(response.data.token);
-      navigate(APP_ROUTES.DASHBOARD)
+      .then((value) => {
+        localStorage.setItem('token', response['token']);
+        localStorage.setItem('user', JSON.stringify(response['user']));
+        window.location.href = "/home";
+      });
+    } else {
+      "Failed", response.message, "error";
     }
-    catch (err) {
-      console.log('Some error occured during signing in: ', err);
-    }
-    finally {
-      setIsLoading(false);
-    }
-  };
+  }
+
   return(
+    <form onSubmit={handleSubmit}>   
     <div className='formCont'>
        <div className="form">
            <h1 className='form-title'>Sign in</h1>
            <div className="form-body">
                <div className="email">
-                   <input  type="email" id="email" className="form__input" placeholder="Email"/>
+                   <input  type="email" id="email" className="form__input" placeholder="Email"
+                    onChange={e => setEmail(e.target.value)}
+                    />
                </div>
                <div className="password">
-                   <input className="form__input" type="password"  id="password" placeholder="Password"/>
+                   <input className="form__input" type="password"  id="password" placeholder="Password"
+                    onChange={e => setPassword(e.target.value)}
+                    />
                </div>
            </div>
            <div className="footer">
-               <button type="submit" onClick={() => setUser(user, console.log('did it'))} 
-               className="register-btn">Sign in</button>
+               <button type="submit" onClick={() => console.log('did it')} 
+               className="register-btn">Sign in</button><br/>
+               <a href="/registration" className='register-link'>Register</a>
            </div>
        </div>
      </div>
+    </form>
    )       
 }
 

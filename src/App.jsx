@@ -11,7 +11,8 @@ import SignIn from './components/RegistrationForm/SignIn';
 
 function App() {
 	const [navVisible, showNavbar] = useState(false);
-	
+	const [token, setAuthToken] = useState();
+
 	return (
 		<BrowserRouter >
 			<div className="App">

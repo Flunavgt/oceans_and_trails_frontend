@@ -14,7 +14,7 @@ function RegistrationForm() {
         password: 'tester1',
       }
     
-      axios.post("https://oceans-api.onrender.com/api/v1/sessions", loginPayload)
+      axios.post("https://oceans-api.onrender.com/api/v1", loginPayload)
         .then(response => {
           //get token from response
           const token  =  response.data.token;
@@ -24,13 +24,19 @@ function RegistrationForm() {
     
           //set token to axios common header
           setAuthToken(token);
-    
+     
    //redirect user to home page
-          window.location.href = '/'
+          window.location.hostname
         })
         .catch(err => console.log(err));
 
+        const handleSubmit = (event) => {
+                // Prevent page reload
+                event.preventDefault();
+              };
+        
     return(
+    <form onSubmit={handleSubmit}>
      <div className='formCont'>
         <div className="form">
             <h1 className='form-title'>Registration</h1>
@@ -54,6 +60,7 @@ function RegistrationForm() {
             </div>
         </div>
       </div>
+    </form>
     )       
 };
 

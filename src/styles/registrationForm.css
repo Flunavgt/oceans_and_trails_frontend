@@ -54,3 +54,10 @@ body {
   background-color: rgb(22, 159, 201);
   margin: 5%;
 }
+
+.register-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 8%;
+}

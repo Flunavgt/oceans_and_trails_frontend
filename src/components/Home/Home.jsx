@@ -10,7 +10,9 @@ const Splash = () => {
         </div>
         <h1 className='splashTitle'>Oceans & Trails</h1>
         <img className='splashCruise' src="src\assets\splashCruise.jpg" alt="cruise img" />
+        <a href="\sign_in">
         <button className='splashButton'>Sign in</button>
+        </a>
     </div>
   )
 }

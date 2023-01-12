@@ -14,6 +14,12 @@ import "../../styles/navbar.css";
 
 const ICON_SIZE = 20;
 
+const handleLogout = () => {
+  localStorage.removeItem("accessToken");
+  localStorage.removeItem("user");
+  window.location.href = "/";
+};
+
 function Navbar({ visible, show }) {
   return (
     <>
@@ -58,7 +64,7 @@ function Navbar({ visible, show }) {
           </NavLink>
           <NavLink to="/Sign-out" className="nav-link">
             <FaSignOutAlt size={ICON_SIZE} />
-            <span>Logout</span>
+            <span><button className="logout" type="submit" onClick={handleLogout}>Logout</button></span>
           </NavLink>
         </div>
       </nav>
