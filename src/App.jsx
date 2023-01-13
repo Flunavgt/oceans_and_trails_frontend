@@ -8,6 +8,10 @@ import Tour from './components/Tour/Tour';
 import RegistrationForm from './components/RegistrationForm/registrationForm';
 import { setAuthToken } from './components/setAuthToken()';
 import SignIn from './components/RegistrationForm/SignIn';
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
+import Logout from './components/auth/Logout';
+
 
 function App() {
 	const [navVisible, showNavbar] = useState(false);
@@ -32,6 +36,21 @@ function App() {
 					<Route path='/reservation' element={
 						<div className={!navVisible ? "page" : "page page-with-navbar"}>
 							<Reservation/>
+						</div>
+					}/>
+					<Route path='/signin' element={
+						<div className={!navVisible ? "page" : "page page-with-navbar"}>
+							<Login/>
+						</div>
+					}/>
+					<Route path='/signup' element={
+						<div className={!navVisible ? "page" : "page page-with-navbar"}>
+							<Signup/>
+						</div>
+					}/>
+					<Route path='/logout' element={
+						<div className={!navVisible ? "page" : "page page-with-navbar"}>
+							<Logout/>
 						</div>
 					}/>
 					<Route path='/settings' element={

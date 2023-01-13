@@ -15,7 +15,7 @@ import "../../styles/navbar.css";
 const ICON_SIZE = 20;
 
 const handleLogout = () => {
-  localStorage.removeItem("accessToken");
+  localStorage.removeItem("token");
   localStorage.removeItem("user");
   window.location.href = "/";
 };
@@ -46,13 +46,42 @@ function Navbar({ visible, show }) {
               <FaThLarge size={ICON_SIZE} />
               <span>Home</span>
             </NavLink>
-            <NavLink to="/tour" className="nav-link">
+          
+            {localStorage.getItem("token") ? (
+              <NavLink to="/tour" className="nav-link">
+                <FaChartBar size={ICON_SIZE} />
+                <span>Tour </span>
+              </NavLink>
+            ) : (
+              ""
+            )}
+            {localStorage.getItem("token") ? (
+              <NavLink to="/reservation" className="nav-link">
+                <FaShoppingCart size={ICON_SIZE} />
+                <span>Reservation</span>
+              </NavLink>
+            ) : (
+              ""
+            )}
+            {/* <NavLink to="/tour" className="nav-link">
               <FaChartBar size={ICON_SIZE} />
               <span>Tour </span>
             </NavLink>
             <NavLink to="/reservation" className="nav-link">
               <FaShoppingCart size={ICON_SIZE} />
               <span>Reservation</span>
+            </NavLink> */}
+            <NavLink to="/signin" className="nav-link">
+              <FaShoppingCart size={ICON_SIZE} />
+              <span>Sign In</span>
+            </NavLink>
+            <NavLink to="/signup" className="nav-link">
+              <FaShoppingCart size={ICON_SIZE} />
+              <span>Sign Up</span>
+            </NavLink>
+            <NavLink to="/logout" className="nav-link">
+              <FaShoppingCart size={ICON_SIZE} />
+              <span>Logout</span>
             </NavLink>
           </div>
         </div>
@@ -62,6 +91,7 @@ function Navbar({ visible, show }) {
             <FaCog size={ICON_SIZE} />
             <span>Profile</span>
           </NavLink>
+          
           <NavLink to="/Sign-out" className="nav-link">
             <FaSignOutAlt size={ICON_SIZE} />
             <span><button className="logout" type="submit" onClick={handleLogout}>Logout</button></span>
