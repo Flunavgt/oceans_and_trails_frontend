@@ -14,21 +14,36 @@ function RegistrationForm() {
         password: 'tester1',
       }
     
-      axios.post("https://oceans-api.onrender.com/api/v1", loginPayload)
-        .then(response => {
+      axios
+        .post("https://oceans-api.onrender.com/api/v1", loginPayload)
+        .then((response) => {
           //get token from response
-          const token  =  response.data.token;
-    
+          const token = response.data.token;
+
           //set JWT token to local
           localStorage.setItem("token", token);
-    
+
           //set token to axios common header
           setAuthToken(token);
-     
-   //redirect user to home page
-          window.location.hostname
+
+          //redirect user to home page
+          window.location.hostname;
         })
-        .catch(err => console.log(err));
+        .catch((error) => {
+          if (error.response) {
+            // status code out of the range of 2xx
+            console.log("Data :", error.response.data);
+            console.log("Status :" + error.response.status);
+          } else if (error.request) {
+            // The request was made but no response was received
+            console.log(error.request);
+          } else {
+            // Error on setting up the request
+            console.log("Error", error.message);
+          }
+        });
+
+
 
         const handleSubmit = (event) => {
                 // Prevent page reload
