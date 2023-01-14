@@ -28,7 +28,7 @@ function SignIn() {
     });
   };
   if (authenticated) {
-    return <Navigate to="/" />;
+    return <Navigate to="/reservation" />;
   }
 
   return (
