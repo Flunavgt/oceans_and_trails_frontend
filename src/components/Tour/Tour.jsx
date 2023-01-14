@@ -5,6 +5,7 @@ import "../../styles/tour.css";
 const Tour = () => {
   const tourShow = useSelector((state) => state.tours.tour);
   // const status = useSelector((state) => state.tours.status);
+  console.log(tourShow);
 
   return (
     <>

@@ -7,8 +7,14 @@ const Reservation = () => {
   const reservationShow = useSelector((state) => state.reservations.reservation)
   console.log(reservationShow)
 
+  const handleClick = () => {
+    window.location.href = "/reservationForm"
+  }
+
+
   return (
    <div>
+    <button className="btn btn-primary" onClick={handleClick}>Add Reservation</button>
       <h1>Reservation</h1>
       <div className="container">
         <div className="title-main">

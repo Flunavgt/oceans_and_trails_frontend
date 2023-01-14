@@ -19,6 +19,28 @@ export const getReservations = createAsyncThunk(
     }
 );
 
+export const postReservation = createAsyncThunk(
+    "reservations/postReservation",
+    async (reservation) => {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: localStorage.getItem('token'),
+            },
+            body: JSON.stringify({ reservation }),
+        }).then((res) => {
+            if (res.ok) {
+                return res.json();
+            }
+            return res.json().then((json) => Promise.reject(json));
+        });
+        return response;
+    }
+);
+
+
+
 const initialState = {
     reservation: [],
     status: "",
@@ -59,7 +81,19 @@ export const reservationsSlice = createSlice({
         .addCase(getReservations.pending, (state) => {
           state.status = 'loading';
         });
-    },
+
+        builder
+        .addCase(postReservation.fulfilled, (state, action) => {
+            state.data = action.payload;
+            state.status = 'succeeded';
+            }
+        )
+        .addCase(postReservation.pending, (state) => {
+            state.status = 'loading';
+        }
+        )
+    }
+    ,
   });
 
 export default reservationsSlice.reducer;

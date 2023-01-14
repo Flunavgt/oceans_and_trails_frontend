@@ -8,6 +8,7 @@ import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
 import Tour from './components/Tour/Tour';
 import Reservation from './components/Reservation/Reservation';
+import ReservationForm from './components/Reservation/ReservationForm';
 
 function App() {
 	return (
@@ -23,6 +24,9 @@ function App() {
 					}
 					if (localStorage.getItem('token')) {
 						<Route path='/reservation' element={<Reservation />}/>
+					}
+					if (localStorage.getItem('token')) {
+						<Route path='/reservationForm' element={<ReservationForm />}/>
 					}
 
 
