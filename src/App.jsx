@@ -22,9 +22,9 @@ function App() {
 					if (localStorage.getItem('token')) {
 						<Route path='/tour' element={<Tour />}/>
 					}
-					if (localStorage.getItem('token')) {
+					
 						<Route path='/reservation' element={<Reservation />}/>
-					}
+					
 					if (localStorage.getItem('token')) {
 						<Route path='/reservationForm' element={<ReservationForm />}/>
 					}

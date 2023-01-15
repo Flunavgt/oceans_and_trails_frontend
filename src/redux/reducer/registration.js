@@ -14,6 +14,7 @@ export const postSignUp = createAsyncThunk(
     }).then((res) => {
       if (res.ok) {
         localStorage.setItem('token', res.headers.get('Authorization'));
+        // localStorage.setItem('user', JSON.stringify(user));
         return res.json();
       }
       throw new Error(res);
