@@ -1,23 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
-import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
-import Home from './components/Home/Home'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Home from "./components/Home/Home";
 import "./index.css";
-import Reservation from './components/Reservation/Reservation';
-import Tour from './components/Tour/Tour';
-import RegistrationForm from './components/RegistrationForm/registrationForm';
-import { setAuthToken } from './components/setAuthToken()';
-import SignIn from './components/RegistrationForm/SignIn';
-import Login from './components/auth/Login';
-import Signup from './components/auth/Signup';
-import Logout from './components/auth/Logout';
+import Reservation from "./components/Reservation/Reservation";
+import Tour from "./components/Tour/Tour";
 
+import { setAuthToken } from "./components/setAuthToken()";
+import Login from "./components/auth/Login";
+import Signup from "./components/auth/Signup";
+import Logout from "./components/auth/Logout";
 
 function App() {
-	const [navVisible, showNavbar] = useState(false);
-	const [token, setAuthToken] = useState();
+  const [navVisible, showNavbar] = useState(false);
 
-	return (
+  return (
     <BrowserRouter>
       <div className="App">
         <Navbar visible={navVisible} show={showNavbar} />
@@ -71,39 +68,10 @@ function App() {
               </div>
             }
           />
-          <Route
-            path="/settings"
-            element={
-              <div className={!navVisible ? "page" : "page page-with-navbar"}>
-                <h1>Settings</h1>
-              </div>
-            }
-          />
-          <Route
-            path="/registration"
-            element={
-              <div className={!navVisible ? "page" : "page page-with-navbar"}>
-                <RegistrationForm />
-              </div>
-            }
-          />
-          <Route
-            path="/sign_in"
-            element={
-              <div className={!navVisible ? "page" : "page page-with-navbar"}>
-                <Login />
-              </div>
-            }
-          />
         </Routes>
       </div>
     </BrowserRouter>
   );
-}
-//check jwt token
-const token = localStorage.getItem("token");
-if (token) {
-	setAuthToken(token);
 }
 
 export default App;
