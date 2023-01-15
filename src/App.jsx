@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home/Home";
 import "./index.css";
 import Reservation from "./components/Reservation/Reservation";
+import ReservationForm from "./components/Reservation/ReservationForm";
 import Tour from "./components/Tour/Tour";
 
 import { setAuthToken } from "./components/setAuthToken()";
@@ -38,6 +39,14 @@ function App() {
           />
           <Route
             path="/reservation"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <ReservationForm />
+              </div>
+            }
+          />
+          <Route
+            path="/my_reservation"
             element={
               <div className={!navVisible ? "page" : "page page-with-navbar"}>
                 <Reservation />

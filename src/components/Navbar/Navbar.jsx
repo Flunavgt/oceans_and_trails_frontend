@@ -70,6 +70,10 @@ function Navbar({ visible, show }) {
               <FaShoppingCart size={ICON_SIZE} />
               <span>Reservation</span>
             </NavLink>
+            <NavLink to="/my_reservation" className="nav-link">
+              <FaShoppingCart size={ICON_SIZE} />
+              <span>My Reservations</span>
+            </NavLink>
           </div>
         </div>
 
