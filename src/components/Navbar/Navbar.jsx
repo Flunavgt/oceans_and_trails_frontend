@@ -5,7 +5,6 @@ import {
   FaChartBar,
   FaThLarge,
   FaShoppingCart,
-  FaCog,
   FaSignOutAlt,
   FaBars,
 } from "react-icons/fa";
@@ -15,7 +14,7 @@ import "../../styles/navbar.css";
 const ICON_SIZE = 20;
 
 const handleLogout = () => {
-  localStorage.removeItem("accessToken");
+  localStorage.removeItem("token");
   localStorage.removeItem("user");
   window.location.href = "/";
 };
@@ -46,29 +45,48 @@ function Navbar({ visible, show }) {
               <FaThLarge size={ICON_SIZE} />
               <span>Home</span>
             </NavLink>
-            <NavLink to="/tour" className="nav-link">
-              <FaChartBar size={ICON_SIZE} />
-              <span>Tour </span>
-            </NavLink>
-            <NavLink to="/reservation" className="nav-link">
+
+            {localStorage.getItem("token") ? (
+              <NavLink to="/tour" className="nav-link">
+                <FaChartBar size={ICON_SIZE} />
+                <span>Tour </span>
+              </NavLink>
+            ) : (
+              ""
+            )}
+            {localStorage.getItem("token") ? (
+              <NavLink to="/reservation" className="nav-link">
+                <FaShoppingCart size={ICON_SIZE} />
+                <span>Reservation</span>
+              </NavLink>
+            ) : (
+              ""
+            )}
+
+            <NavLink to="/my_reservation" className="nav-link">
               <FaShoppingCart size={ICON_SIZE} />
-              <span>Reservation</span>
-            </NavLink>
-            <NavLink to="/reservationForm" className="nav-link">
-              <FaShoppingCart size={ICON_SIZE} />
-              <span>Add Reservation</span>
+              <span>My Reservations</span>
             </NavLink>
           </div>
         </div>
 
         <div className="links">
-          <NavLink to="/settings" className="nav-link">
-            <FaCog size={ICON_SIZE} />
-            <span>Profile</span>
+          <NavLink to="/signup" className="nav-link">
+            <FaSignOutAlt size={ICON_SIZE} />
+            <span>
+              <button className="logout" type="submit">
+                Sign Up
+              </button>
+            </span>
           </NavLink>
+
           <NavLink to="/Sign-out" className="nav-link">
             <FaSignOutAlt size={ICON_SIZE} />
-            <span><button className="logout" type="submit" onClick={handleLogout}>Logout</button></span>
+            <span>
+              <button className="logout" type="submit" onClick={handleLogout}>
+                Logout
+              </button>
+            </span>
           </NavLink>
         </div>
       </nav>

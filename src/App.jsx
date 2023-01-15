@@ -2,6 +2,8 @@ import {
   BrowserRouter,
   Routes, Route, Navigate,
 } from 'react-router-dom';
+import { useState } from 'react';
+import Navbar from "./components/Navbar/Navbar";
 import Home from './components/Home/Home';
 import './index.css';
 import SignInPage from './pages/SignInPage';
@@ -11,28 +13,70 @@ import Reservation from './components/Reservation/Reservation';
 import ReservationForm from './components/Reservation/ReservationForm';
 
 function App() {
+	const [navVisible, showNavbar] = useState(false);
 	return (
-		<BrowserRouter >
-			<div className="App">
-				<Routes>
-					<Route path="/" element={<Navigate to="/home" />} />
-					<Route path='/home' element={<Home/>} />
-					<Route path='/sign-up' element={<SignUpPage />}/>
-					<Route path='/sign-in' element={<SignInPage />}/>
-					if (localStorage.getItem('token')) {
-						<Route path='/tour' element={<Tour />}/>
-					}
-					
-						<Route path='/reservation' element={<Reservation />}/>
-					
-					if (localStorage.getItem('token')) {
-						<Route path='/reservationForm' element={<ReservationForm />}/>
-					}
-
-
-				</Routes>
-			</div>
-		</BrowserRouter>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar visible={navVisible} show={showNavbar} />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route
+            path="/home"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <Home />
+              </div>
+            }
+          />
+          <Route
+            path="/sign-up"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <SignUpPage />
+              </div>
+            }
+          />
+          <Route
+            path="/sign-in"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <SignInPage />
+              </div>
+            }
+          />
+          if (localStorage.getItem('token')){" "}
+          {
+            <Route
+              path="/tour"
+              element={
+                <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                  <Tour />
+                </div>
+              }
+            />
+          }
+          <Route
+            path="/my_reservation"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <Reservation />
+              </div>
+            }
+          />
+          if (localStorage.getItem('token')){" "}
+          {
+            <Route
+              path="/reservation"
+              element={
+                <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                  <ReservationForm />
+                </div>
+              }
+            />
+          }
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
