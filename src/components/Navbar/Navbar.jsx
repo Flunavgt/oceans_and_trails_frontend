@@ -45,15 +45,11 @@ function Navbar({ visible, show }) {
               <FaThLarge size={ICON_SIZE} />
               <span>Home</span>
             </NavLink>
+            <NavLink to="/tour" className="nav-link">
+              <FaChartBar size={ICON_SIZE} />
+              <span>Tour </span>
+            </NavLink>
 
-            {localStorage.getItem("token") ? (
-              <NavLink to="/tour" className="nav-link">
-                <FaChartBar size={ICON_SIZE} />
-                <span>Tour </span>
-              </NavLink>
-            ) : (
-              ""
-            )}
             {localStorage.getItem("token") ? (
               <NavLink to="/reservation" className="nav-link">
                 <FaShoppingCart size={ICON_SIZE} />
@@ -62,11 +58,14 @@ function Navbar({ visible, show }) {
             ) : (
               ""
             )}
-
-            <NavLink to="/my_reservation" className="nav-link">
-              <FaShoppingCart size={ICON_SIZE} />
-              <span>My Reservations</span>
-            </NavLink>
+            {localStorage.getItem("token") ? (
+              <NavLink to="/my_reservation" className="nav-link">
+                <FaShoppingCart size={ICON_SIZE} />
+                <span>My Reservations</span>
+              </NavLink>
+            ) : (
+              ""
+            )}
           </div>
         </div>
 
