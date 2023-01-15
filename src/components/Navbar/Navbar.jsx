@@ -5,7 +5,6 @@ import {
   FaChartBar,
   FaThLarge,
   FaShoppingCart,
-  FaCog,
   FaSignOutAlt,
   FaBars,
 } from "react-icons/fa";
@@ -46,7 +45,7 @@ function Navbar({ visible, show }) {
               <FaThLarge size={ICON_SIZE} />
               <span>Home</span>
             </NavLink>
-          
+
             {localStorage.getItem("token") ? (
               <NavLink to="/tour" className="nav-link">
                 <FaChartBar size={ICON_SIZE} />
@@ -63,38 +62,34 @@ function Navbar({ visible, show }) {
             ) : (
               ""
             )}
-            {/* <NavLink to="/tour" className="nav-link">
+            <NavLink to="/tour" className="nav-link">
               <FaChartBar size={ICON_SIZE} />
               <span>Tour </span>
             </NavLink>
             <NavLink to="/reservation" className="nav-link">
               <FaShoppingCart size={ICON_SIZE} />
               <span>Reservation</span>
-            </NavLink> */}
-            <NavLink to="/signin" className="nav-link">
-              <FaShoppingCart size={ICON_SIZE} />
-              <span>Sign In</span>
-            </NavLink>
-            <NavLink to="/signup" className="nav-link">
-              <FaShoppingCart size={ICON_SIZE} />
-              <span>Sign Up</span>
-            </NavLink>
-            <NavLink to="/logout" className="nav-link">
-              <FaShoppingCart size={ICON_SIZE} />
-              <span>Logout</span>
             </NavLink>
           </div>
         </div>
 
         <div className="links">
-          <NavLink to="/settings" className="nav-link">
-            <FaCog size={ICON_SIZE} />
-            <span>Profile</span>
+          <NavLink to="/signup" className="nav-link">
+            <FaSignOutAlt size={ICON_SIZE} />
+            <span>
+              <button className="logout" type="submit">
+                Sign Up
+              </button>
+            </span>
           </NavLink>
-          
+
           <NavLink to="/Sign-out" className="nav-link">
             <FaSignOutAlt size={ICON_SIZE} />
-            <span><button className="logout" type="submit" onClick={handleLogout}>Logout</button></span>
+            <span>
+              <button className="logout" type="submit" onClick={handleLogout}>
+                Logout
+              </button>
+            </span>
           </NavLink>
         </div>
       </nav>

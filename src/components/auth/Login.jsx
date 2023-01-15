@@ -48,7 +48,13 @@ const Login = () => {
                     className="form__input"
                   />
                 </div>
-                <input type="submit" value="Login" />
+                <div className="footer">
+                  <input type="submit" value="Login" className="register-btn" />
+                  <br />
+                  <a href="/signup" className="register-link">
+                    Register
+                  </a>
+                </div>
               </div>
             </div>
           </div>
