@@ -18,59 +18,86 @@ function App() {
 	const [token, setAuthToken] = useState();
 
 	return (
-		<BrowserRouter >
-			<div className="App">
-				<Navbar visible={ navVisible } show={ showNavbar } />
-				<Routes>
-					<Route path="/" element={<Navigate to="/home" />} />
-					<Route path='/home' element={
-						<div className={!navVisible ? "page" : "page page-with-navbar"}>
-              <Home/>
-						</div>
-					} />
-					<Route path='/tour' element={
-						<div className={!navVisible ? "page" : "page page-with-navbar"}>
-							<Tour/>
-						</div>
-					}/>
-					<Route path='/reservation' element={
-						<div className={!navVisible ? "page" : "page page-with-navbar"}>
-							<Reservation/>
-						</div>
-					}/>
-					<Route path='/signin' element={
-						<div className={!navVisible ? "page" : "page page-with-navbar"}>
-							<Login/>
-						</div>
-					}/>
-					<Route path='/signup' element={
-						<div className={!navVisible ? "page" : "page page-with-navbar"}>
-							<Signup/>
-						</div>
-					}/>
-					<Route path='/logout' element={
-						<div className={!navVisible ? "page" : "page page-with-navbar"}>
-							<Logout/>
-						</div>
-					}/>
-					<Route path='/settings' element={
-						<div className={!navVisible ? "page" : "page page-with-navbar"}>
-							<h1>Settings</h1>
-						</div>
-					}/>
-					<Route path='/registration' element={
-						<div className={!navVisible ? "page" : "page page-with-navbar"}>
-							<RegistrationForm />
-						</div>
-					}/>
-					<Route path='/sign_in' element={
-						<div className={!navVisible ? "page" : "page page-with-navbar"}>
-							<SignIn />
-						</div>
-					}/>
-				</Routes>
-			</div>
-		</BrowserRouter>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar visible={navVisible} show={showNavbar} />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route
+            path="/home"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <Home />
+              </div>
+            }
+          />
+          <Route
+            path="/tour"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <Tour />
+              </div>
+            }
+          />
+          <Route
+            path="/reservation"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <Reservation />
+              </div>
+            }
+          />
+          <Route
+            path="/signin"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <Login />
+              </div>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <Signup />
+              </div>
+            }
+          />
+          <Route
+            path="/logout"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <Logout />
+              </div>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <h1>Settings</h1>
+              </div>
+            }
+          />
+          <Route
+            path="/registration"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <RegistrationForm />
+              </div>
+            }
+          />
+          <Route
+            path="/sign_in"
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <Login />
+              </div>
+            }
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 //check jwt token

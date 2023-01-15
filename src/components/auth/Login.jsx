@@ -20,14 +20,41 @@ const Login = () => {
     console.log(credentials);
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="email" value={credentials.email} onChange={handleChange} placeholder="Email" />
-                <input type="password" name="password" value={credentials.password} onChange={handleChange} placeholder="Password" />
+      <div>
+        <form onSubmit={handleSubmit}>
+          <div className="formCont">
+            <div className="form">
+              <h1 className="form-title">Login in</h1>
+              <div className="form-body">
+                <div className="email">
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    value={credentials.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    className="form__input"
+                  />
+                </div>
+                <div className="email">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    value={credentials.password}
+                    onChange={handleChange}
+                    placeholder="Password"
+                    className="form__input"
+                  />
+                </div>
                 <input type="submit" value="Login" />
-            </form>
-        </div>
-    )
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    );
 }
 
 export default Login;
