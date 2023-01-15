@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux'
 
 const Reservation = () => {
 
-  const reservationShow = useSelector((state) => state.reservations.reservation)
-  console.log(reservationShow)
+  const reservationShow = useSelector((state) => state.reservations.reservation);
+  // console.log(reservationShow);
 
   const handleClick = () => {
     window.location.href = "/reservationForm"
@@ -41,4 +41,4 @@ const Reservation = () => {
   )
 }
 
-export default Reservation
+export default Reservation;
