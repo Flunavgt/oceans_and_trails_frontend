@@ -1,50 +1,74 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const apiReservationData = "http://oceans-api.onrender.com/api/v1/users/1/reservations";
+const apiUrl = "https://oceans-api.onrender.com/api/v1/users/1/reservations";
 
-export const getReservationData = createAsyncThunk(
-    "reservations/getReservationData",
-    async () => {
-        const response = await fetch(apiReservationData);
-        const data = await response.json();
-        console.log(data);
-        return data;
-    }
+export const getReservations = createAsyncThunk(
+  "reservations/getReservations",
+  async () => {
+    const response = await fetch(apiUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+    return data;
+  }
+);
+
+export const postReservation = createAsyncThunk(
+  "reservations/postReservation",
+  async (reservation) => {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+      body: JSON.stringify({ reservation }),
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return res.json().then((json) => Promise.reject(json));
+    });
+    return response;
+  }
 );
 
 const initialState = {
-    reservation: [
-        {
-            id: 1,
-            user_id: 1,
-            tour_id: 1,
-            startDate: "2021-05-01",
-            endDate: "2021-05-05",
-        }
-    ],
-    status: "",
-  };
+  reservation: [],
+  status: "",
+  error: null,
+};
+
+
 
 export const reservationsSlice = createSlice({
-    name: "reservations",
-    initialState,
-    reducers: {},
-    extraReducers(builder) {
-        builder
-            .addCase(getReservationData.pending, (state) => {
-                state.status = "loading";
-            })
-            .addCase(getReservationData.fulfilled, (state, action) => {
-                state.status = "success";
-                state.reservation = action.payload;
-            })
-            .addCase(getReservationData.rejected, (state) => {
-                state.status = "failed";
-            });
-    }
+  name: "reservations",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getReservations.fulfilled, (state, action) => {
+        state.reservation = action.payload;
+        state.status = "succeeded";
+      })
+      .addCase(getReservations.pending, (state) => {
+        state.status = "loading";
+      });
 
+    builder
+      .addCase(postReservation.fulfilled, (state, action) => {
+        state.reservation = action.payload;
+        state.status = "succeeded";
+      })
+      .addCase(postReservation.pending, (state) => {
+        state.status = "loading";
+      });
+  },
 });
 
 export default reservationsSlice.reducer;
-
-    
