@@ -62,14 +62,7 @@ function Navbar({ visible, show }) {
             ) : (
               ""
             )}
-            <NavLink to="/tour" className="nav-link">
-              <FaChartBar size={ICON_SIZE} />
-              <span>Tour </span>
-            </NavLink>
-            <NavLink to="/reservation" className="nav-link">
-              <FaShoppingCart size={ICON_SIZE} />
-              <span>Reservation</span>
-            </NavLink>
+            
             <NavLink to="/my_reservation" className="nav-link">
               <FaShoppingCart size={ICON_SIZE} />
               <span>My Reservations</span>
