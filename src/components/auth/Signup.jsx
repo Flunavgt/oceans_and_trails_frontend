@@ -20,16 +20,55 @@ const Signup = () => {
     console.log(credentials);
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="name" value={credentials.name} onChange={handleChange} placeholder="Name" />
-                <input type="text" name="email" value={credentials.email} onChange={handleChange} placeholder="Email" />
-                <input type="password" name="password" value={credentials.password} onChange={handleChange} placeholder="Password" />
-                <input type="password" name="password_confirmation" value={credentials.password_confirmation} onChange={handleChange} placeholder="Password Confirmation" />
-                <input type="submit" value="Sign Up" />
-            </form>
+      <form onSubmit={handleSubmit}>
+        <div className="formCont">
+          <div className="form">
+            <h1 className="form-title">SignUp</h1>
+            <div className="form-body">
+              <div className="username">
+                <input
+                  type="text"
+                  name="name"
+                  value={credentials.name}
+                  onChange={handleChange}
+                  placeholder="Name"
+                />
+              </div>
+              <div className="email">
+                <input
+                  type="text"
+                  name="email"
+                  value={credentials.email}
+                  onChange={handleChange}
+                  placeholder="Email"
+                />
+              </div>
+              <div className="password">
+                <input
+                  type="password"
+                  name="password"
+                  value={credentials.password}
+                  onChange={handleChange}
+                  placeholder="Password"
+                />
+              </div>
+              <div className="confirm-password">
+                <input
+                  type="password"
+                  name="password_confirmation"
+                  value={credentials.password_confirmation}
+                  onChange={handleChange}
+                  placeholder="Password Confirmation"
+                />
+              </div>
+            </div>
+            <div className="footer">
+              <input type="submit" value="Sign Up" className="register-btn" />
+            </div>
+          </div>
         </div>
-    )
+      </form>
+    );
 }
 
 export default Signup;
