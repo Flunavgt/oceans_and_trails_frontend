@@ -47,30 +47,14 @@ const initialState = {
 };
 
 
-// const reservationsSlice = createSlice({
-//     name: "reservations",
-//     initialState,
-//     reducers: {},
-//     extraReducers(builder) {
-//         builder
-//             .addCase(getReservations.pending, (state) => {
-//                 state.status = "loading";
-//             })
-//             .addCase(getReservations.fulfilled, (state, action) => {
-//                 state.status = "succeeded";
-//                 state.reservations = state.reservations.concat(action.payload);
-//             })
-//             .addCase(getReservations.rejected, (state, action) => {
-//                 state.status = "failed";
-//                 state.error = action.error.message;
-//             });
-//     }
-// });
-
 export const reservationsSlice = createSlice({
     name: 'reservations',
     initialState,
-    reducers: {},
+    reducers: {
+        removeItem: (state, action) => {
+            state.reservation = state.reservation.filter((item) => item.id !== action.payload);
+        },
+    },
     extraReducers: (builder) => {
       builder
         .addCase(getReservations.fulfilled, (state, action) => {
