@@ -6,10 +6,12 @@ import { useParams } from "react-router-dom";
 const TourDetails = () => {
   const { id } = useParams();
   const tourDetail = useSelector((state) => state.tours.tour);
+  console.log(tourDetail);
   return (
     <div>
+      <h1>Tour Details</h1>
       {tourDetail.map((tour) => {
-        if (tour.id === id) {
+        if (tour.id === parseInt(id))
           return (
             <div key={tour.id}>
               <Link className="back" to="/tours">
@@ -20,7 +22,7 @@ const TourDetails = () => {
               <p>{tour.description}</p>
             </div>
           );
-        }
+        
       })}
     </div>
   );
