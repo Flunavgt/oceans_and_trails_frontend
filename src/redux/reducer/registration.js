@@ -1,49 +1,47 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = [];
 
-export const postSignUp = createAsyncThunk("users/signup", async (user) => {
-  await fetch("https://oceans-api.onrender.com/api/v1", {
-    method: "POST",
+export const postSignUp = createAsyncThunk('users/signup', async (user) => {
+  await fetch('https://oceans-api.onrender.com/api/v1', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({ user }),
   }).then((res) => {
     if (res.ok) {
-      localStorage.setItem("token", res.headers.get("Authorization"));
-      console.log(action.payload);
-      // localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('token', res.headers.get('Authorization'));
       return res.json();
     }
     throw new Error(res);
   });
 });
 
-export const postSignIn = createAsyncThunk("users/signin", async (user) => {
-  await fetch("https://oceans-api.onrender.com/api/v1/login", {
-    method: "POST",
+export const postSignIn = createAsyncThunk('users/signin', async (user) => {
+  await fetch('https://oceans-api.onrender.com/api/v1/login', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({ user }),
   }).then((res) => {
     if (res.ok) {
-      localStorage.setItem("token", res.headers.get("Authorization"));
+      localStorage.setItem('token', res.headers.get('Authorization'));
       return res.json();
     }
     return res.text().then((text) => Promise.reject(text));
   });
 });
 
-export const deleteSession = createAsyncThunk("users/signout", async () => {
-  const token = localStorage.getItem("token");
-  localStorage.removeItem("token");
+export const deleteSession = createAsyncThunk('users/signout', async () => {
+  const token = localStorage.getItem('token');
+  localStorage.removeItem('token');
 
-  await fetch("https://oceans-api.onrender.com/api/v1/logout", {
-    method: "delete",
+  await fetch('https://oceans-api.onrender.com/api/v1/logout', {
+    method: 'delete',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: token,
     },
   }).then((res) => {
@@ -55,7 +53,7 @@ export const deleteSession = createAsyncThunk("users/signout", async () => {
 });
 
 export const reservationSlice = createSlice({
-  name: "reservations",
+  name: 'reservations',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
