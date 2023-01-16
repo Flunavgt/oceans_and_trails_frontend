@@ -25,12 +25,13 @@ const ReservationForm = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input type="date" name="startDate" value={reservationData.startDate} onChange={handleChange} />
-                <input type="date" name="endDate" value={reservationData.endDate}  onChange={handleChange} />
-                <input type="text" name="tour_id" value={reservationData.tour_id} onChange={handleChange} />
-                <input type="text" name="user_id" value={reservationData.user_id}  onChange={handleChange} />
-                <input type="submit" value="Submit" />
+            <h1 className="form-title">Reserve your tour here</h1>
+            <form className="form-body" onSubmit={handleSubmit}>
+                <input type="date" name="startDate" value={reservationData.startDate} onChange={handleChange} /><br/>
+                <input type="date" name="endDate" value={reservationData.endDate}  onChange={handleChange} /><br/>
+                <input type="text" name="tour_id" value={reservationData.tour_id} onChange={handleChange} /><br/>
+                <input type="text" name="user_id" value={reservationData.user_id}  onChange={handleChange} /><br/>
+                <input className="sign-in" type="submit" value="Submit" />
             </form>
         </div>
     )
