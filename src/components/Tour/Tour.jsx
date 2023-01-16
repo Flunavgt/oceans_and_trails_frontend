@@ -1,16 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "../../styles/tour.css";
 
 const Tour = () => {
   const tourShow = useSelector((state) => state.tours.tour);
-  // const status = useSelector((state) => state.tours.status);
-  console.log(tourShow);
 
   return (
     <>
       <div className="container">
-        
         <div className="title-main">
           <h2>Latest Tours</h2>
           <h4>Please Select from the List of Tours</h4>
@@ -19,7 +17,7 @@ const Tour = () => {
         <div className="tour-wrapper">
           {tourShow.map((tour) => {
             return (
-              <div key={tour.id} className="card">
+              <Link key={tour.id} to={`/tours/${tour.id}`} className="card">
                 <div className="imgBx">
                   <img src={tour.picture} />
                 </div>
@@ -35,7 +33,7 @@ const Tour = () => {
                     <i className="fa-brands fa-instagram"></i>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

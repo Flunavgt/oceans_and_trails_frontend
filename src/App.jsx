@@ -12,7 +12,8 @@ import Tour from './components/Tour/Tour';
 import Reservation from './components/Reservation/Reservation';
 import ReservationForm from './components/Reservation/ReservationForm';
 
-function App() {
+
+function App(tour) {
 	const [navVisible, showNavbar] = useState(false);
 	return (
     <BrowserRouter>
@@ -28,6 +29,14 @@ function App() {
               </div>
             }
           />
+          {/* <Route
+            path={`/tours/${tour.id}`} 
+            element={
+              <div className={!navVisible ? "page" : "page page-with-navbar"}>
+                <myTour/>
+              </div>
+            }
+          /> */}
           <Route
             path="/sign-up"
             element={
