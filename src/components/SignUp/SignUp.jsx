@@ -65,7 +65,7 @@ function SignUp() {
           /><br/>
           <input className="sign-in" type="submit" value="Sign Up" />
           <div>
-            <Link className='register-link' to="/sign-in">sign In</Link>
+            <Link className='register-link' to="/sign-in">Sign In</Link>
           </div>
         </form>
       </div>
