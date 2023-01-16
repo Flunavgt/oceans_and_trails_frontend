@@ -38,9 +38,8 @@ function SignIn() {
       <form className="wrapper" onSubmit={handleSubmit}>
         <div className="container">
           <div className="form">
-            <h1 className="brand-title">Login in</h1>
+            <h1 className="brand-title">Log in</h1>
             <div className="form-body">
-              <label>EMAIL</label>
               <input
                 placeholder="Email"
                 type="email"
@@ -51,7 +50,6 @@ function SignIn() {
                   setEmail(e.target.value);
                 }}
               />
-              <label>PASSWORD</label>
               <input
                 placeholder="Password"
                 type="password"
@@ -61,7 +59,7 @@ function SignIn() {
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
-              />
+              /><br/>
               <input className="submit-login" type="submit" value="Sign In" />
               <div>
                 Not a member? <Link to="/sign-up">Sign up</Link>
