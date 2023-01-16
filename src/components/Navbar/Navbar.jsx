@@ -41,17 +41,17 @@ function Navbar({ visible, show }) {
             {/* <img src={("../assets/Images/logo.png")} alt="logo" /> */}
           </NavLink>
           <div className="links nav-top">
-            <NavLink to="/home" className="nav-link">
+            <NavLink to="/home" className="nav-link" onClick={() => show(!visible)}>
               <FaThLarge size={ICON_SIZE} />
               <span>Home</span>
             </NavLink>
-            <NavLink to="/tours" className="nav-link">
+            <NavLink to="/tours" className="nav-link" onClick={() => show(!visible)}>
               <FaChartBar size={ICON_SIZE} />
               <span>Tour </span>
             </NavLink>
 
             {localStorage.getItem("token") ? (
-              <NavLink to="/reservation" className="nav-link">
+              <NavLink to="/reservation" className="nav-link" onClick={() => show(!visible)}>
                 <FaShoppingCart size={ICON_SIZE} />
                 <span>Reservation</span>
               </NavLink>
@@ -59,7 +59,7 @@ function Navbar({ visible, show }) {
               ""
             )}
             {localStorage.getItem("token") ? (
-              <NavLink to="/my_reservation" className="nav-link">
+              <NavLink to="/my_reservation" className="nav-link" onClick={() => show(!visible)}>
                 <FaShoppingCart size={ICON_SIZE} />
                 <span>My Reservations</span>
               </NavLink>
@@ -72,7 +72,7 @@ function Navbar({ visible, show }) {
         {localStorage.getItem("token") ? (
             ''
           ) : (
-            <NavLink to="/sign-up" className="nav-link">
+            <NavLink to="/sign-up" className="nav-link" onClick={() => show(!visible)}>
             <FaSignOutAlt size={ICON_SIZE} />
             <span>
               <button className="signup" type="submit">
