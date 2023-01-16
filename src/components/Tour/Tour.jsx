@@ -17,7 +17,7 @@ const Tour = () => {
         <div className="tour-wrapper">
           {tourShow.map((tour) => {
             return (
-              <Link key={tour.id} to={`/tours/${tour.id}`} className="card">
+              <Link key={tour.id} to={`${tour.id}`} className="card">
                 <div className="imgBx">
                   <img src={tour.picture} />
                 </div>

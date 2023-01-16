@@ -11,6 +11,7 @@ import SignUpPage from './pages/SignUpPage';
 import Tour from './components/Tour/Tour';
 import Reservation from './components/Reservation/Reservation';
 import ReservationForm from './components/Reservation/ReservationForm';
+import TourDetails from './components/Tour/TourDetails';
 
 
 function App(tour) {
@@ -29,14 +30,14 @@ function App(tour) {
               </div>
             }
           />
-          {/* <Route
-            path={`/tours/${tour.id}`} 
+          <Route
+            path="/tours/:id"
             element={
               <div className={!navVisible ? "page" : "page page-with-navbar"}>
-                <myTour/>
+                <TourDetails />
               </div>
             }
-          /> */}
+          />
           <Route
             path="/sign-up"
             element={
@@ -56,7 +57,7 @@ function App(tour) {
           if (localStorage.getItem('token')){" "}
           {
             <Route
-              path="/tour"
+              path="/tours"
               element={
                 <div className={!navVisible ? "page" : "page page-with-navbar"}>
                   <Tour />

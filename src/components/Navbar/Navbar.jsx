@@ -45,7 +45,7 @@ function Navbar({ visible, show }) {
               <FaThLarge size={ICON_SIZE} />
               <span>Home</span>
             </NavLink>
-            <NavLink to="/tour" className="nav-link">
+            <NavLink to="/tours" className="nav-link">
               <FaChartBar size={ICON_SIZE} />
               <span>Tour </span>
             </NavLink>
