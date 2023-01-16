@@ -41,7 +41,8 @@ body {
 }
 
 .form_input {
-  width: 60%;
+  width: 50%;
+  margin: 3px;
 }
 
 .footer {
@@ -57,7 +58,7 @@ body {
 
 .register-link {
   text-decoration: none;
-  color: white;
+  color: rgb(15, 13, 13);
   font-weight: bold;
   margin-bottom: 8%;
 }
