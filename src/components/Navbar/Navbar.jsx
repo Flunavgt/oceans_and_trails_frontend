@@ -68,9 +68,11 @@ function Navbar({ visible, show }) {
             )}
           </div>
         </div>
-
         <div className="links">
-          <NavLink to="/sign-up" className="nav-link">
+        {localStorage.getItem("token") ? (
+            ''
+          ) : (
+            <NavLink to="/sign-up" className="nav-link">
             <FaSignOutAlt size={ICON_SIZE} />
             <span>
               <button className="signup" type="submit">
@@ -78,7 +80,9 @@ function Navbar({ visible, show }) {
               </button>
             </span>
           </NavLink>
-
+            )}
+              
+            {localStorage.getItem("token") ? (
           <NavLink to="/Sign-out" className="nav-link">
             <FaSignOutAlt size={ICON_SIZE} />
             <span>
@@ -87,6 +91,9 @@ function Navbar({ visible, show }) {
               </button>
             </span>
           </NavLink>
+          ) : (
+              ""
+            )}
         </div>
       </nav>
     </>
