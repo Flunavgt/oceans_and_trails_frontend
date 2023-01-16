@@ -1,0 +1,63 @@
+body {
+  background: #bdc3c7;
+  background: -webkit-linear-gradient(right, #2c3e50, #bdc3c7);
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+}
+
+.form {
+  background-color: white;
+  border-radius: 5px;
+  width: 750px;
+  margin: 20px auto;
+  padding: 20px;
+  justify-content: center;
+  background-image: url('../assets/cocktailImage.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.form-title {
+  text-align: center;
+  font-weight: bolder;
+  margin: 5%;
+}
+
+.form-body {
+  text-align: left;
+  padding: 20px 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-body > * {
+  padding: 5px;
+}
+
+.form__label {
+  width: 40%;
+}
+
+.form_input {
+  width: 60%;
+}
+
+.footer {
+  text-align: center;
+}
+
+.register-btn {
+  color: white;
+  padding: 10px 10px;
+  background-color: rgb(22, 159, 201);
+  margin: 5%;
+}
+
+.register-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 8%;
+}
