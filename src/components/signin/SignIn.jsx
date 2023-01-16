@@ -37,8 +37,8 @@ function SignIn() {
   return (
     <div>
       <form className="wrapper" onSubmit={handleSubmit}>
-        <div className="container">
-          <div className="form">
+        <div className="form">
+          <div>
             <h1 className="form-title">Log in</h1>
             <div className="form-body">
               <input
