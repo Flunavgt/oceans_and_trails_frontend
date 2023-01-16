@@ -30,7 +30,7 @@ function SignIn() {
       });
   };
   if (authenticated) {
-    return <Navigate to="/reservation" />;
+    return <Navigate to="/tours" />;
   }
 
   return (
