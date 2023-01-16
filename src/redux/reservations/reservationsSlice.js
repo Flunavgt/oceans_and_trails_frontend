@@ -38,6 +38,27 @@ export const postReservation = createAsyncThunk(
   },
 );
 
+
+export const deleteReservation = createAsyncThunk( 
+  'reservations/deleteReservation',
+  async (id) => {
+    const response = await fetch(`${apiUrl}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return res.json().then((json) => Promise.reject(json));
+    });
+    return response;
+  },
+);
+
+
 const initialState = {
   reservation: [],
   status: '',
@@ -70,6 +91,18 @@ export const reservationsSlice = createSlice({
         state.status = 'succeeded';
       })
       .addCase(postReservation.pending, (state) => {
+        state.status = 'loading';
+      });
+
+    builder
+      .addCase(deleteReservation.fulfilled, (state, action) => {
+        state.reservation = state.reservation.filter(
+          (item) => item.id !== action.payload,
+        );
+        
+        state.status = 'succeeded';
+      })
+      .addCase(deleteReservation.pending, (state) => {
         state.status = 'loading';
       });
 

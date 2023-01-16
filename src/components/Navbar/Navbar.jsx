@@ -36,7 +36,7 @@ function Navbar({ visible, show }) {
           {!visible ? <FaAngleRight size={30} /> : <FaAngleLeft size={30} />}
         </button>
         <div>
-          <h3 className="logo-title">Oceans</h3>
+          <h3 className="logo-title">Oceans and Trails</h3>
           <NavLink className="" to="/">
             {/* <img src={("../assets/Images/logo.png")} alt="logo" /> */}
           </NavLink>
