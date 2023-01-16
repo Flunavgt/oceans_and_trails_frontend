@@ -1,13 +1,15 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import moment from 'moment';
 import { removeItem } from '../../redux/reservations/reservationsSlice';
 import { useDispatch } from 'react-redux';
-import postReservation from '../../redux/reservations/reservationsSlice';
+import {deleteReservation} from '../../redux/reservations/reservationsSlice';
 
 
 const Reservation = () => {
 const dispatch = useDispatch();
   const reservationShow = useSelector((state) => state.reservations.reservation);
+  const tourInformation = useSelector((state) => state.tours.tour);
   console.log(reservationShow);
 
   const handleClick = () => {
@@ -29,12 +31,20 @@ const dispatch = useDispatch();
               return (
                 <div key={res.id} className="card">
                   <div className="imgBx">
-                    <p>{res.tour_id}</p>
-                    <p>{res.user_id}</p>
-                    <p>{res.startDate}</p>
-                    <p>{res.endDate}</p>
+                    {
+                      tourInformation.map((tour) => {
+                        if (tour.id === res.tour_id) {
+                          return (
+                            <p>Tour Name: {tour.tourName}</p>
+                          )
+                        }
+                    }
+                    )}
+                    <p>{res.tourName}</p>
+                    <p>Reservation Start Date: {moment((res.startDate).time).format('DD/MM/YYYY')}</p>
+                    <p>Reservation End Date: {moment((res.endDate).time).format('DD/MM/YYYY')}</p>
                   </div>
-                  <button onClick={()=>{dispatch(removeItem(res.id))}}>Delete</button>
+                  <button onClick={()=>{dispatch(deleteReservation(res.id))}}>Delete Res</button>
                 </div>
               );
             })

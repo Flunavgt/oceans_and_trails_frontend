@@ -1,15 +1,16 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
 import { postReservation } from "../../redux/reservations/reservationsSlice";
-
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 const ReservationForm = () => {
+    const { id } = useParams();
     const dispatch = useDispatch();
     const [reservationData, setReservationData] = useState({
         startDate: "",
         endDate: "",
         tour_id: "",
-        user_id: ""
+        user_id: "",
     })
 
     const handleChange = (e) => {
