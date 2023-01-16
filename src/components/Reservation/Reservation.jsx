@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { removeItem } from '../../redux/reservations/reservationsSlice';
 import { useDispatch } from 'react-redux';
+import postReservation from '../../redux/reservations/reservationsSlice';
 
 
 const Reservation = () => {
