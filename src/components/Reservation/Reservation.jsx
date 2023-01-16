@@ -1,11 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { removeItem } from '../../redux/reservations/reservationsSlice';
+import { useDispatch } from 'react-redux';
 
 
 const Reservation = () => {
-
+const dispatch = useDispatch();
   const reservationShow = useSelector((state) => state.reservations.reservation);
-  // console.log(reservationShow);
+  console.log(reservationShow);
 
   const handleClick = () => {
     window.location.href = "/reservationForm"
@@ -31,8 +33,9 @@ const Reservation = () => {
                     <p>{res.startDate}</p>
                     <p>{res.endDate}</p>
                   </div>
+                  <button onClick={()=>{dispatch(removeItem(res.id))}}>Delete</button>
                 </div>
-              )
+              );
             })
           }
         </div>

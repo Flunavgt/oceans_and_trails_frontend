@@ -70,10 +70,10 @@ function Navbar({ visible, show }) {
         </div>
 
         <div className="links">
-          <NavLink to="/signup" className="nav-link">
+          <NavLink to="/sign-up" className="nav-link">
             <FaSignOutAlt size={ICON_SIZE} />
             <span>
-              <button className="logout" type="submit">
+              <button className="signup" type="submit">
                 Sign Up
               </button>
             </span>

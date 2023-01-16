@@ -52,7 +52,9 @@ export const reservationsSlice = createSlice({
     initialState,
     reducers: {
         removeItem: (state, action) => {
-            state.reservation = state.reservation.filter((item) => item.id !== action.payload);
+            state.reservation = state.reservation.filter(
+              (item) => item.id !== action.payload
+            );
         },
     },
     extraReducers: (builder) => {
@@ -78,5 +80,5 @@ export const reservationsSlice = createSlice({
     }
     ,
   });
-
+export const { removeItem } = reservationsSlice.actions;
 export default reservationsSlice.reducer;
