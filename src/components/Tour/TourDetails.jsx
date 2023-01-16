@@ -7,6 +7,12 @@ const TourDetails = () => {
   const { id } = useParams();
   const tourDetail = useSelector((state) => state.tours.tour);
   console.log(tourDetail);
+
+const handleReserve = () => {
+  window.location.href = "/reservation";
+  
+};
+
   return (
     <div>
       <h1>Tour Details</h1>
@@ -24,6 +30,7 @@ const TourDetails = () => {
           );
         
       })}
+      <button onClick={handleReserve}> Reserve Tour</button>
     </div>
   );
 };
