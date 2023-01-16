@@ -5,7 +5,6 @@ const Splash = () => {
   return (
     <div className='splash'>
         <div className='splashNav'>
-          <i  className="fa-solid fa-bars"></i>
           <i className="fa-solid fa-glass fa-solid fa-magnifying-glass"></i>
         </div>
         <h1 className='splashTitle'>Oceans & Trails</h1>
