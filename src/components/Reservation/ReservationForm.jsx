@@ -20,6 +20,7 @@ const ReservationForm = () => {
         e.preventDefault();
         
         dispatch(postReservation(reservationData))
+        window.location.href = '/my_reservation'
     }
     console.log(reservationData)
 
