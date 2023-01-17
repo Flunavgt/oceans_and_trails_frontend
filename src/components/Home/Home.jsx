@@ -1,13 +1,20 @@
 import React from "react";
 import "../../styles/splash.css";
 
+
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+  window.location.href = "/";
+};
+
 const Splash = () => {
   return (
     <div className="splash">
       <div className="splashNav">
         <i className="fa-solid fa-glass fa-solid fa-magnifying-glass"></i>
       </div>
-      <div className='content'>
+      <div className="content">
         <h1 className="splashTitle">Oceans & Trails</h1>
         <h3 className="splashSubTitle">Explore the world with us</h3>
         <div className="splash-content">
@@ -18,9 +25,16 @@ const Splash = () => {
           </h5>
         </div>
 
-        <a href="\sign-in">
-          <button className="splashButton">Sign in</button>
+        
+
+        {localStorage.getItem("token") ? (
+          ''
+        ) : (
+          <a href="\sign-in">
+          <button className="splashButton">Tour with us</button>
         </a>
+        )}
+
       </div>
     </div>
   );
