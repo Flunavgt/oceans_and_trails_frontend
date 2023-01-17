@@ -24,20 +24,6 @@ body {
   margin: 5%;
 }
 
-@media screen and (max-width: 500px) {
-  .form {
-    background: url('../assets/cocktailImage.jpg') center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-  .form_input {
-    width: 70%;
-  }
-}
-
 .form-body {
   text-align: left;
   padding: 20px 10px;
@@ -73,4 +59,26 @@ body {
   color: rgb(15, 13, 13);
   font-weight: bold;
   margin-bottom: 8%;
+}
+
+@media screen and (max-width: 500px) {
+  .form {
+    background: url('../assets/cocktailImage.jpg') center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .form_input {
+    width: 70%;
+    margin: auto;
+  }
+
+  .form-body {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+  }
 }
