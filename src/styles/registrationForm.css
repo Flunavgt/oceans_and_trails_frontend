@@ -7,7 +7,7 @@ body {
 .form {
   background-color: white;
   border-radius: 5px;
-  width: 750px;
+  width: 90%;
   margin: 20px auto;
   padding: 20px;
   justify-content: center;
@@ -25,11 +25,11 @@ body {
 }
 
 .form-body {
-  text-align: left;
+  text-align: center;
   padding: 20px 10px;
   align-items: center;
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
+  margin: auto;
 }
 
 .form-body > * {
@@ -37,18 +37,19 @@ body {
 }
 
 .form__label {
-  width: 40%;
+  width: 70%;
 }
 
 .form_input {
-  width: 60%;
+  width: 75%;
+  margin: 3px;
 }
 
 .footer {
   text-align: center;
 }
 
-.register-btn {
+.sign-in {
   color: white;
   padding: 10px 10px;
   background-color: rgb(22, 159, 201);
@@ -57,7 +58,29 @@ body {
 
 .register-link {
   text-decoration: none;
-  color: white;
+  color: rgb(15, 13, 13);
   font-weight: bold;
   margin-bottom: 8%;
+}
+
+@media screen and (max-width: 500px) {
+  .form {
+    background: url('../assets/cocktailImage.jpg') center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .form_input {
+    width: 70%;
+    margin: auto;
+  }
+
+  .form-body {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+  }
 }

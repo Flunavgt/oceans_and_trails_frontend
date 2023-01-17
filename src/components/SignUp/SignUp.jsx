@@ -27,6 +27,7 @@ function SignUp() {
     navigate('/sign-in');
   };
   return (
+
     <div className="wrapper">
       <form className="container" onSubmit={handleSubmit}>
         <h1 className="brand-title">Sign Up</h1>
@@ -74,8 +75,9 @@ function SignUp() {
             />
           </div>
           <input className="submit-login" type="submit" value="Sign Up" />
+
           <div>
-            <Link to="/sign-in">sign In</Link>
+            <Link className='register-link' to="/sign-in">Sign In</Link>
           </div>
         </div>
       </form>

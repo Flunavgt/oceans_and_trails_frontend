@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { postReservation } from "../../redux/reservations/reservationsSlice";
+import '../../styles/registrationForm.css' 
 
 const ReservationForm = () => {
     const dispatch = useDispatch();
@@ -20,10 +21,12 @@ const ReservationForm = () => {
         e.preventDefault();
         
         dispatch(postReservation(reservationData))
+        window.location.href = '/my_reservation'
     }
     console.log(reservationData)
 
     return (
+
       <div className="wrapper">
         <form className="container" onSubmit={handleSubmit}>
           <h1 className="brand-title">Make a Reservation</h1>
@@ -61,6 +64,7 @@ const ReservationForm = () => {
         </form>
       </div>
     );
+
 }
 
 export default ReservationForm;

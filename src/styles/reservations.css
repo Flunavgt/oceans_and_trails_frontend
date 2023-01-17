@@ -1,0 +1,23 @@
+.btn.btn-primary {
+  margin: 3%;
+}
+
+.container {
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+}
+
+.fa-solid.fa-ship {
+  margin: auto;
+  font-size: 420%;
+  margin-bottom: 15%;
+  color: rgb(21, 18, 189);
+}
+
+.imgBx {
+  text-align: center;
+  justify-content: center;
+  margin: 10%;
+}

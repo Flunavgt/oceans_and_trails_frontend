@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import '../../styles/registrationForm.css';
 import { setAuthToken } from '../setAuthToken()';
+import '../../styles/registrationForm.css';
 
 function RegistrationForm() {
     const [user, setUser] = useState({
@@ -56,7 +56,7 @@ function RegistrationForm() {
             </div>
             <div className="footer">
                 <button type="submit" onClick={() => setUser(user)} 
-                className="register-btn">Register</button>
+                className="sign-in">Register</button>
             </div>
         </div>
       </div>

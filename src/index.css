@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
 }
 
 .App {
@@ -19,6 +20,7 @@
   justify-content: center;
   align-items: center;
   transition: margin-left 1s;
+  background-color: #fff;
 }
 
 /* This line below creates a margine left when the navbar opens pushing the contents left */

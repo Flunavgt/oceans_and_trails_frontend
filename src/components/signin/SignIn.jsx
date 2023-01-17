@@ -3,7 +3,9 @@ import { useDispatch } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import { postSignIn } from "../../redux/reducer/registration";
 import { useIsAuthenticated } from "../../redux/hooks";
+
 import "../../styles/signIn.css";
+
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -35,40 +37,46 @@ function SignIn() {
   }
 
   return (
+
     <div className="wrapper">
       <form className="container" onSubmit={handleSubmit}>        
           <h1 className="brand-title">Login</h1>
           <div className="form-body">
             <div className="input-body">
               <label>EMAIL</label>
+
               <input
                 placeholder="Email"
                 type="email"
                 name="email"
                 value={email}
-                className="input-box"
+                className="input"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
+
             </div>
             <div className="input-body">
               <label>PASSWORD</label>
+
               <input
                 placeholder="Password"
                 type="password"
                 name="password"
                 value={password}
-                className="input-box"
+                className="input"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
+
               />
             </div>
 
             <input className="submit-login" type="submit" value="Sign In" />
             <div>
               Not a member? <Link to="/sign-up">Sign up</Link>
+
             </div>
           </div>
       </form>
