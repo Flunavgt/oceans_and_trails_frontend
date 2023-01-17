@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import { postSignIn } from "../../redux/reducer/registration";
 import { getProfile } from "../../redux/reducer/registration";
 import { useIsAuthenticated } from "../../redux/hooks";
+import { useSelector } from "react-redux";
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ function SignIn() {
       });
   };
   if (authenticated) {
-    
+    const userInfo = useSelector((state) => state.userInfo.user);
     return <Navigate to="/tours" />;
   }
 
