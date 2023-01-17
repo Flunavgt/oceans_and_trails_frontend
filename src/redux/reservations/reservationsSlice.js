@@ -1,11 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const apiUrl = 'https://oceans-api.onrender.com/api/v1/users/1/reservations';
+const apiUrl = 'https://oceans-api.onrender.com/api/v1/users';
+const childUrl = 'reservations';
+
+const user_id = localStorage.getItem('user_id');
 
 export const getReservations = createAsyncThunk(
   'reservations/getReservations',
   async () => {
-    const response = await fetch(apiUrl, {
+    const response = await fetch(`${apiUrl}/${user_id}/${childUrl}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +24,7 @@ export const getReservations = createAsyncThunk(
 export const postReservation = createAsyncThunk(
   'reservations/postReservation',
   async (reservation) => {
-    const response = await fetch(apiUrl, {
+    const response = await fetch(`${apiUrl}/${user_id}/${childUrl}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,11 +41,10 @@ export const postReservation = createAsyncThunk(
   },
 );
 
-
 export const deleteReservation = createAsyncThunk( 
   'reservations/deleteReservation',
   async (id) => {
-    const response = await fetch(`${apiUrl}/${id}`, {
+    const response = await fetch(`${apiUrl}/${user_id}/${childUrl}/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

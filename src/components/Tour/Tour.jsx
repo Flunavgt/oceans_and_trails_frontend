@@ -1,12 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getProfile } from "../../redux/reducer/registration";
 import "../../styles/tour.css";
 
 const Tour = () => {
   const tourShow = useSelector((state) => state.tours.tour);
   const userInfo = useSelector((state) => state.userInfo.user);
   console.log(userInfo)
+  localStorage.setItem("user_id", userInfo.id)
 
   return (
     <>

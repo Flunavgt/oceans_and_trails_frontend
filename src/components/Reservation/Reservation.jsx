@@ -16,6 +16,17 @@ const dispatch = useDispatch();
     window.location.href = "/reservationForm"
   }
 
+  const handleDelete = (id) => {
+    
+    if (window.confirm("Are you sure you want to delete this reservation?")) {
+      dispatch(deleteReservation(id))
+      dispatch(removeItem(id));
+      window.alert("Reservation Deleted");
+    }
+    window.location.reload();
+  }
+
+
 
   return (
    <div>
@@ -35,16 +46,16 @@ const dispatch = useDispatch();
                       tourInformation.map((tour) => {
                         if (tour.id === res.tour_id) {
                           return (
-                            <p>Tour Name: {tour.tourName}</p>
+                            <p key={tour.id}>Tour Name: {tour.tourName}</p>
                           )
                         }
                     }
                     )}
                     <p>{res.tourName}</p>
-                    <p>Reservation Start Date: {moment((res.startDate).time).format('DD/MM/YYYY')}</p>
-                    <p>Reservation End Date: {moment((res.endDate).time).format('DD/MM/YYYY')}</p>
+                    <p>Reservation Start Date: {moment((res.startDate)).format('DD/MM/YYYY')}</p>
+                    <p>Reservation End Date: {moment((res.endDate)).format('DD/MM/YYYY')}</p>
                   </div>
-                  <button onClick={()=>{dispatch(deleteReservation(res.id))}}>Delete Res</button>
+                  <button onClick={()=>{handleDelete(res.id)}}>Delete Res</button>
                 </div>
               );
             })

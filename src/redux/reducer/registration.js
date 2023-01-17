@@ -14,7 +14,7 @@ export const postSignUp = createAsyncThunk(
     }).then((res) => {
       if (res.ok) {
         localStorage.setItem('token', res.headers.get('Authorization'));
-        localStorage.setItem('user', JSON.stringify(user));
+        // localStorage.setItem('user', JSON.stringify(user));
         return res.json();
       }
       throw new Error(res);
@@ -52,8 +52,10 @@ export const getProfile = createAsyncThunk(
       },
     }).then((res) => {
       if (res.ok) {
-        localStorage.setItem('user', JSON.stringify(res.json()));
-        return res.json();
+        const user = res.json();
+        localStorage.setItem('user', JSON.stringify(user));
+        //localStorage.setItem('user', JSON.stringify(res.json()));
+        return user;
       }
       return res.json().then((json) => Promise.reject(json));
     });
@@ -94,6 +96,7 @@ export const reservationSlice = createSlice({
     builder.addCase(
       getProfile.fulfilled,
       (state, action) => action.payload,
+
     );
   },
 });

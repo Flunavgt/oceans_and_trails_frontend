@@ -2,9 +2,9 @@ import { configureStore } from '@reduxjs/toolkit';
 import toursReducer, { getTourData } from './tours/toursSlice';
 import reservationsReducer, { getReservations } from './reservations/reservationsSlice';
 import userReducer from './user/userSlice';
-import { getProfile } from './reducer/registration';
+import { getProfile } from './user/userSlice';
 import registration from './reducer/registration';
-import user from './reducer/user';
+// import user from './reducer/user';
 
 const store = configureStore({
   reducer: {
@@ -12,9 +12,10 @@ const store = configureStore({
     reservations: reservationsReducer,
     userInfo: userReducer,
     registration,
-    user,
   },
 });
+
+
 store.dispatch(getTourData());
 store.dispatch(getReservations());
 store.dispatch(getProfile());

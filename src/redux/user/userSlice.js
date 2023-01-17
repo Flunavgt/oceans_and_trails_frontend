@@ -12,13 +12,13 @@ export const getProfile = createAsyncThunk(
                 Authorization: localStorage.getItem("token"),
             },
         });
-        const data = await response.json();
+        const data = response.json();
         return data;
     }
 );
 
 const initialState = {
-    user: {},
+    user: [],
     status: "idle",
 };
 

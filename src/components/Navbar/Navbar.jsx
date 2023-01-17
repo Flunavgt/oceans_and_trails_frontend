@@ -16,6 +16,7 @@ const ICON_SIZE = 20;
 const handleLogout = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("user");
+  localStorage.removeItem("user_id");
   window.location.href = "/";
 };
 
