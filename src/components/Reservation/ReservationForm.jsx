@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { postReservation } from "../../redux/reservations/reservationsSlice";
+import '../../styles/registrationForm.css' 
 
 const ReservationForm = () => {
     const dispatch = useDispatch();
@@ -20,17 +21,19 @@ const ReservationForm = () => {
         e.preventDefault();
         
         dispatch(postReservation(reservationData))
+        window.location.href = '/my_reservation'
     }
     console.log(reservationData)
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input type="date" name="startDate" value={reservationData.startDate} onChange={handleChange} />
-                <input type="date" name="endDate" value={reservationData.endDate}  onChange={handleChange} />
-                <input type="text" name="tour_id" value={reservationData.tour_id} onChange={handleChange} />
-                <input type="text" name="user_id" value={reservationData.user_id}  onChange={handleChange} />
-                <input type="submit" value="Submit" />
+            <h1 className="form-title">Make your reservation</h1>
+            <form className="form-body" onSubmit={handleSubmit}>
+                <input className="form_input" type="date" name="startDate" value={reservationData.startDate} onChange={handleChange} /><br/>
+                <input className="form_input" type="date" name="endDate" value={reservationData.endDate}  onChange={handleChange} /><br/>
+                <input className="form_input" type="text" name="tour_id" value={reservationData.tour_id} onChange={handleChange} /><br/>
+                <input className="form_input" type="text" name="user_id" value={reservationData.user_id}  onChange={handleChange} /><br/>
+                <input className="sign-in" type="submit" value="Submit" />
             </form>
         </div>
     )

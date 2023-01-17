@@ -26,16 +26,16 @@ function SignUp() {
     navigate('/sign-in');
   };
   return (
-    <div className="login-container">
+    <div className="form">
       <div className="login-image" />
-      <div className="login">
-        <h1 className="login-title">Sign Up</h1>
-        <form className="login-form" onSubmit={handleSubmit}>
+      <div>
+        <h1 className="form-title">Sign Up</h1>
+        <form className="form-body" onSubmit={handleSubmit}>
           <input
             placeholder="Name"
             type="text"
             name="name"
-            className="input-box"
+            className="form_input"
             value={name}
             onChange={(e) => { setName(e.target.value); }}
           />
@@ -43,7 +43,7 @@ function SignUp() {
             placeholder="Email"
             type="email"
             name="email"
-            className="input-box"
+            className="form_input"
             value={email}
             onChange={(e) => { setEmail(e.target.value); }}
           />
@@ -51,7 +51,7 @@ function SignUp() {
             placeholder="Password"
             type="password"
             name="password"
-            className="input-box"
+            className="form_input"
             value={password}
             onChange={(e) => { setpassword(e.target.value); }}
           />
@@ -59,13 +59,13 @@ function SignUp() {
             placeholder="Password Confirmation"
             type="password"
             name="password_confirmation"
-            className="input-box"
+            className="form_input"
             value={confirm_password}
             onChange={(e) => { setPasswordConfirmation(e.target.value); }}
-          />
-          <input className="submit-login" type="submit" value="Sign Up" />
+          /><br/>
+          <input className="sign-in" type="submit" value="Sign Up" />
           <div>
-            <Link to="/sign-in">sign In</Link>
+            <Link className='register-link' to="/sign-in">Sign In</Link>
           </div>
         </form>
       </div>
