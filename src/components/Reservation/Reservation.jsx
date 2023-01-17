@@ -8,7 +8,7 @@ import postReservation from '../../redux/reservations/reservationsSlice';
 const Reservation = () => {
 const dispatch = useDispatch();
   const reservationShow = useSelector((state) => state.reservations.reservation);
-  console.log(reservationShow);
+  
 
   const handleClick = () => {
     window.location.href = "/reservationForm"
