@@ -24,17 +24,20 @@ const Splash = () => {
             accusantium sint.
           </h5>
         </div>
-
-        
-
         {localStorage.getItem("token") ? (
-          ''
+          ""
         ) : (
           <a href="\sign-in">
-          <button className="splashButton">Tour with us</button>
-        </a>
+            <button className="splashButton">Tour with us</button>
+          </a>
         )}
-
+        {localStorage.getItem("token") ? (
+          <a href="\sign-in">
+            <button className="splashButton">Tour with us</button>
+          </a>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );
