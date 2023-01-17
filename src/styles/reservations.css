@@ -1,0 +1,10 @@
+.btn.btn-primary {
+  margin: 3%;
+}
+
+.container {
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+}
