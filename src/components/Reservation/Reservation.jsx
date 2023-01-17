@@ -28,7 +28,7 @@ const dispatch = useDispatch();
               return (
                 <div key={res.id} className="card">
                   <div className="imgBx">
-                    <i class="fa-solid fa-ship"></i>
+                    <i className="fa-solid fa-ship"></i>
                     <p>{res.startDate}</p>
                     <p>{res.endDate}</p>
                   </div>
