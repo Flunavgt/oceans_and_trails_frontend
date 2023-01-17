@@ -26,17 +26,45 @@ const ReservationForm = () => {
     console.log(reservationData)
 
     return (
-        <div>
-            <h1 className="form-title">Make your reservation</h1>
-            <form className="form-body" onSubmit={handleSubmit}>
-                <input className="form_input" type="date" name="startDate" value={reservationData.startDate} onChange={handleChange} /><br/>
-                <input className="form_input" type="date" name="endDate" value={reservationData.endDate}  onChange={handleChange} /><br/>
-                <input className="form_input" type="text" name="tour_id" value={reservationData.tour_id} onChange={handleChange} /><br/>
-                <input className="form_input" type="text" name="user_id" value={reservationData.user_id}  onChange={handleChange} /><br/>
-                <input className="sign-in" type="submit" value="Submit" />
-            </form>
-        </div>
-    )
+
+      <div className="wrapper">
+        <form className="container" onSubmit={handleSubmit}>
+          <h1 className="brand-title">Make a Reservation</h1>
+          <div className="form-body">
+            <div className="input-body">
+              <input
+                type="date"
+                name="startDate"
+                value={reservationData.startDate}
+                onChange={handleChange}
+              />
+              <input
+                type="date"
+                name="endDate"
+                value={reservationData.endDate}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="tour_id"
+                value={reservationData.tour_id}
+                onChange={handleChange}
+                placeholder="Tour ID"
+              />
+              <input
+                type="text"
+                name="user_id"
+                value={reservationData.user_id}
+                onChange={handleChange}
+                placeholder="User ID"
+              />
+              <input type="submit" value="Submit" />
+            </div>
+          </div>
+        </form>
+      </div>
+    );
+
 }
 
 export default ReservationForm;
