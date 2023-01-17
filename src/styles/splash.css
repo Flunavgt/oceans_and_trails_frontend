@@ -3,7 +3,7 @@
   text-align: center;
   background:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../assets/splashCruise.jpg);
+    url(../../public/splashCruise.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -91,8 +91,17 @@
   font-size: 1.5rem;
 }
 
-/* @media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   .splashTitle {
+    font-size: 40px;
+    margin-bottom: 0.75rem;
+  }
+  .splashSubTitle {
+    font-size: 30px;
+    margin-bottom: 0.75rem;
+  }
+  .paragraph {
     font-size: 20px;
   }
-} */
+
+}
