@@ -8,7 +8,7 @@ const Tour = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="tour-container">
         <div className="title-main">
           <h2>Latest Tours</h2>
           <h4>Please Select from the List of Tours</h4>

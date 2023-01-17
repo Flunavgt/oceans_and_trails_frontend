@@ -1,17 +1,19 @@
 /*  style should be here */
 .wrapper {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   position: relative;
-  width: 100%;
-  height: 60%;
   border-radius: 20px;
   padding: 20px;
-  background: #f3f1ec;
+  background: #fff;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
   margin: 2rem;
+  width: 80%;
+  height: 100%;
 }
 
 .brand-title {
