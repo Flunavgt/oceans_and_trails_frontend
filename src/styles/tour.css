@@ -34,7 +34,8 @@
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
-  grid-gap:0.5rem;
+  grid-gap: 0.5rem;
+
   /* flex-wrap: wrap; */
 }
 

@@ -20,7 +20,9 @@
   align-items: center;
   transition: margin-left 1s;
 }
+
 /* This line below creates a margine left when the navbar opens pushing the contents left */
+
 /* .page-with-navbar {
   margin-left: 15%;
 } */

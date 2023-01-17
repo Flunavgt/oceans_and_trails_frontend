@@ -9,7 +9,6 @@
   background-position: center;
   width: 100%;
   height: 100vh;
-  
 }
 
 .splashNav {
@@ -32,7 +31,7 @@
   margin-left: 90%;
 }
 
-.content{
+.content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,12 +95,13 @@
     font-size: 40px;
     margin-bottom: 0.75rem;
   }
+
   .splashSubTitle {
     font-size: 30px;
     margin-bottom: 0.75rem;
   }
+
   .paragraph {
     font-size: 20px;
   }
-
 }
