@@ -30,18 +30,19 @@
 }
 
 .tour-wrapper {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  grid-gap:0.5rem;
+  /* flex-wrap: wrap; */
 }
 
 .card {
   width: 300px;
   height: 400px;
   background: #fff;
-  margin: 2rem;
+  margin: 1rem;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: flex;
