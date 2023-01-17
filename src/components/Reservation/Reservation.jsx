@@ -28,8 +28,7 @@ const dispatch = useDispatch();
               return (
                 <div key={res.id} className="card">
                   <div className="imgBx">
-                    <p>{res.tour_id}</p>
-                    <p>{res.user_id}</p>
+                    <i class="fa-solid fa-ship"></i>
                     <p>{res.startDate}</p>
                     <p>{res.endDate}</p>
                   </div>

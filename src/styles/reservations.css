@@ -8,3 +8,16 @@
   margin: auto;
   background-color: white;
 }
+
+.fa-solid.fa-ship {
+  color: black;
+  margin: auto;
+  font-size: 420%;
+  margin-bottom: 15%;
+}
+
+.imgBx {
+  text-align: center;
+  justify-content: center;
+  margin: 10%;
+}
