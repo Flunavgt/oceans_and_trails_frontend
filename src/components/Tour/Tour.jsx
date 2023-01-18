@@ -12,10 +12,8 @@ const styleName = {
 
 const Tour = () => {
   const tourShow = useSelector((state) => state.tours.tour);
-  const userInfo = useSelector((state) => state.userInfo.user);
   const reloadCount = Number(sessionStorage.getItem('reloadCount')) || 0;
 
-  console.log(userInfo);
   useEffect(() => {
     if(reloadCount < 1) {
       sessionStorage.setItem('reloadCount', String(reloadCount + 1));
@@ -25,12 +23,8 @@ const Tour = () => {
     }
   }, []);
 
-  localStorage.setItem("user_id", userInfo.id);
-  // const fullName = userInfo.name[0].toUpperCase() + userInfo.name.slice(1);
-
   return (
     <>
-
       <div className="tour-container">
         {/* <span style={styleName}>Welcome {fullName}</span> */}
 

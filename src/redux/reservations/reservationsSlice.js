@@ -3,28 +3,32 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const apiUrl = 'https://oceans-api.onrender.com/api/v1/users';
 const childUrl = 'reservations';
 
-const user_id = localStorage.getItem('user_id');
+const userId = localStorage.getItem('user_id');
 
 export const getReservations = createAsyncThunk(
   'reservations/getReservations',
   async () => {
-    const response = await fetch(`${apiUrl}/${user_id}/${childUrl}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
-      },
-    });
-    const data = await response.json();
-    console.log(data);
-    return data;
+    if (!localStorage.getItem('token')) {
+
+    } else {
+      const response = await fetch(`${apiUrl}/${userId}/${childUrl}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: localStorage.getItem('token'),
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+      return data;
+    }
   },
 );
 
 export const postReservation = createAsyncThunk(
   'reservations/postReservation',
   async (reservation) => {
-    const response = await fetch(`${apiUrl}/${user_id}/${childUrl}`, {
+    const response = await fetch(`${apiUrl}/${userId}/${childUrl}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -41,10 +45,10 @@ export const postReservation = createAsyncThunk(
   },
 );
 
-export const deleteReservation = createAsyncThunk( 
+export const deleteReservation = createAsyncThunk(
   'reservations/deleteReservation',
   async (id) => {
-    const response = await fetch(`${apiUrl}/${user_id}/${childUrl}/${id}`, {
+    const response = await fetch(`${apiUrl}/${userId}/${childUrl}/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -59,7 +63,6 @@ export const deleteReservation = createAsyncThunk(
     return response;
   },
 );
-
 
 const initialState = {
   reservation: [],
@@ -101,7 +104,7 @@ export const reservationsSlice = createSlice({
         state.reservation = state.reservation.filter(
           (item) => item.id !== action.payload,
         );
-        
+
         state.status = 'succeeded';
       })
       .addCase(deleteReservation.pending, (state) => {
