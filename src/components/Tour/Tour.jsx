@@ -19,8 +19,10 @@ const Tour = () => {
 
   return (
     <>
+
       <div className="container">
         <span style={styleName}>Welcome {fullName}</span>
+
         <div className="title-main">
           <h2>Latest Tours</h2>
           <h4>Please Select from the List of Tours</h4>

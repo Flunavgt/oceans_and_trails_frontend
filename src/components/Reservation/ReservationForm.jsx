@@ -1,8 +1,10 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { postReservation } from "../../redux/reservations/reservationsSlice";
+
 import { Navigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 
 const ReservationForm = () => {
     const userInfo = useSelector((state) => state.userInfo.user);
@@ -31,16 +33,47 @@ const ReservationForm = () => {
     console.log(reservationData)
 
     return (
-        <div>
-        
-            <form onSubmit={handleSubmit}>
-                <input type="date" name="startDate" value={reservationData.startDate} onChange={handleChange} />
-                <input type="date" name="endDate" value={reservationData.endDate}  onChange={handleChange} />
-                <input type="text" name="tour_id" value={reservationData.tour_id}  onChange={handleChange} />
-                <input type="submit" value="Submit" />
-            </form>
-        </div>
-    )
+
+
+      <div className="wrapper">
+        <form className="container" onSubmit={handleSubmit}>
+          <h1 className="brand-title">Make a Reservation</h1>
+          <div className="form-body">
+            <div className="input-body">
+              <input
+                type="date"
+                name="startDate"
+                value={reservationData.startDate}
+                onChange={handleChange}
+              />
+              <input
+                type="date"
+                name="endDate"
+                value={reservationData.endDate}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="tour_id"
+                value={reservationData.tour_id}
+                onChange={handleChange}
+                placeholder="Tour ID"
+              />
+              <input
+                type="text"
+                name="user_id"
+                value={reservationData.user_id}
+                onChange={handleChange}
+                placeholder="User ID"
+              />
+              <input type="submit" value="Submit" />
+            </div>
+          </div>
+        </form>
+      </div>
+    );
+
+
 }
 
 export default ReservationForm;

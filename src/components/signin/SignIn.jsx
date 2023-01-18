@@ -6,6 +6,9 @@ import { getProfile } from "../../redux/reducer/registration";
 import { useIsAuthenticated } from "../../redux/hooks";
 import { useSelector } from "react-redux";
 
+import "../../styles/signIn.css";
+
+
 function SignIn() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
@@ -40,41 +43,48 @@ function SignIn() {
   }
 
   return (
-    <div>
-      <form className="wrapper" onSubmit={handleSubmit}>
-        <div className="container">
-          <div className="form">
-            <h1 className="brand-title">Login in</h1>
-            <div className="form-body">
+
+    <div className="wrapper">
+      <form className="container" onSubmit={handleSubmit}>        
+          <h1 className="brand-title">Login</h1>
+          <div className="form-body">
+            <div className="input-body">
               <label>EMAIL</label>
+
               <input
                 placeholder="Email"
                 type="email"
                 name="email"
                 value={email}
-                className="input-box"
+                className="input"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
+
+            </div>
+            <div className="input-body">
               <label>PASSWORD</label>
+
               <input
                 placeholder="Password"
                 type="password"
                 name="password"
                 value={password}
-                className="input-box"
+                className="input"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
+
               />
-              <input className="submit-login" type="submit" value="Sign In" />
-              <div>
-                Not a member? <Link to="/sign-up">Sign up</Link>
-              </div>
+            </div>
+
+            <input className="submit-login" type="submit" value="Sign In" />
+            <div>
+              Not a member? <Link to="/sign-up">Sign up</Link>
+
             </div>
           </div>
-        </div>
       </form>
     </div>
   );

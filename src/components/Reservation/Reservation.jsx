@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { useSelector } from 'react-redux'
 import moment from 'moment';
@@ -28,15 +29,17 @@ const dispatch = useDispatch();
 
 
 
+
   return (
-   <div>
-    <button className="btn btn-primary" onClick={handleClick}>Add Reservation</button>
-      <h1>Reservation</h1>
-      <div className="container">
+
+    <div>
+      <div className="res-container">
+
         <div className="title-main">
           <h2>Latest Reservation</h2>
           <h4>Please Select from the List of Reservations</h4>
           <span className="dot">..........</span>
+
           {
             reservationShow.map((res) => {
               return (
@@ -56,14 +59,25 @@ const dispatch = useDispatch();
                     <p>Reservation End Date: {moment((res.endDate)).format('DD/MM/YYYY')}</p>
                   </div>
                   <button onClick={()=>{handleDelete(res.id)}}>Delete Res</button>
+
                 </div>
-              );
-            })
-          }
+                <button
+                  onClick={() => {
+                    dispatch(removeItem(res.id));
+                  }}
+                >
+                  Delete
+                </button>
+              </div>
+            );
+          })}
         </div>
+        <button className="btn" onClick={handleClick}>
+          Add Reservation
+        </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Reservation;
