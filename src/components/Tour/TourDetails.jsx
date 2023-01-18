@@ -36,7 +36,7 @@ const TourDetails = () => {
               
             </div>
           );
-        
+
       })}
     
     </div>
