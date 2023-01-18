@@ -66,25 +66,25 @@
 }
 
 .splashTitle {
-  color: #ffff;
+  color: #000;
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 7rem;
 }
 
 .splashTitle:hover {
-  color: #e7e7e7;
+  color: #0e3b43;
 }
 
 .splashSubTitle {
-  color: #ffff;
+  color: #0e3b43;
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 3rem;
 }
 
 .paragraph {
-  color: #ffff;
+  color: #07020d;
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.5rem;
