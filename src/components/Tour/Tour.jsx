@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../../styles/tour.css";
@@ -13,16 +13,26 @@ const styleName = {
 const Tour = () => {
   const tourShow = useSelector((state) => state.tours.tour);
   const userInfo = useSelector((state) => state.userInfo.user);
-  console.log(userInfo);
+  const reloadCount = Number(sessionStorage.getItem('reloadCount')) || 0;
 
-  localStorage.setItem("user_id", userInfo.id)
-  const fullName = userInfo.name[0].toUpperCase() + userInfo.name.slice(1);
+  console.log(userInfo);
+  useEffect(() => {
+    if(reloadCount < 1) {
+      sessionStorage.setItem('reloadCount', String(reloadCount + 1));
+      window.location.reload();
+    } else {
+      sessionStorage.removeItem('reloadCount');
+    }
+  }, []);
+
+  localStorage.setItem("user_id", userInfo.id);
+  // const fullName = userInfo.name[0].toUpperCase() + userInfo.name.slice(1);
 
   return (
     <>
 
       <div className="tour-container">
-        <span style={styleName}>Welcome {fullName}</span>
+        {/* <span style={styleName}>Welcome {fullName}</span> */}
 
         <div className="title-main">
           <h2>Latest Tours</h2>
