@@ -92,3 +92,58 @@
   color: rgb(163, 162, 162);
   padding: 5px;
 }
+
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.description {
+  text-decoration: none;
+  color: #000;
+  text-align: left;
+}
+
+.tour-detail {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.back {
+  margin-left: 100px;
+}
+
+.nav-back {
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.tour-image {
+  width: 100vh;
+  height: 50vh;
+}
+
+.reserve-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 20px;
+  background-color: #000;
+  border-radius: 5px;
+  margin-top: 30px;
+}

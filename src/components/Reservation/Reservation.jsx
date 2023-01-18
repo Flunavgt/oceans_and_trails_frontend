@@ -4,6 +4,8 @@ import moment from "moment";
 import { removeItem } from "../../redux/reservations/reservationsSlice";
 import { useDispatch } from "react-redux";
 import { deleteReservation } from "../../redux/reservations/reservationsSlice";
+import '../../styles/reservations.css'
+
 const Reservation = () => {
   const dispatch = useDispatch();
   const reservationShow = useSelector(
@@ -51,11 +53,12 @@ const Reservation = () => {
                   </p>
                 </div>
                 <button
+                  className="delete-btn"
                   onClick={() => {
                     handleDelete(res.id);
                   }}
                 >
-                  Delete Res
+                  Delete
                 </button>
               </div>
             );

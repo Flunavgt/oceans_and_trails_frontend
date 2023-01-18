@@ -19,25 +19,30 @@ const TourDetails = () => {
 
   return (
     <div>
+    <Link className="back text-link" to="/tours">
+    <p className="nav-back">← Back</p>
+  </Link>
+    <div className="tour-detail">
+      
       <h1>Tour Details</h1>
       {tourDetail.map((tour) => {
         if (tour.id === parseInt(id))
           return (
             <div key={tour.id}>
-              <Link className="back" to="/tours">
-                <p className="nav-back">← Back</p>
-              </Link>
+             
               <h1>{tour.tourName}</h1>
-              <img src={tour.picture} />
+              <img src={tour.picture} className="tour-image"/>
               <p>{tour.description}</p>
-              <Link to="/reservation">
-              <span>Reserve Tour</span>
-              </Link>
+              
             </div>
           );
         
       })}
-      
+    
+    </div>
+    <Link to="/reservation" className="text-link">
+        <span className="reserve-link">Reserve Tour</span>
+      </Link>
     </div>
   );
 };

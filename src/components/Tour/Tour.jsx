@@ -13,6 +13,7 @@ const styleName = {
 const Tour = () => {
   const tourShow = useSelector((state) => state.tours.tour);
   const userInfo = useSelector((state) => state.userInfo.user);
+  console.log(userInfo);
 
   localStorage.setItem("user_id", userInfo.id)
   const fullName = userInfo.name[0].toUpperCase() + userInfo.name.slice(1);
@@ -31,7 +32,7 @@ const Tour = () => {
         <div className="tour-wrapper">
           {tourShow.map((tour) => {
             return (
-              <Link key={tour.id} to={`${tour.id}`} className="card">
+              <Link key={tour.id} to={`${tour.id}`} className="card text-link">
                 <div className="imgBx">
                   <img src={tour.picture} />
                 </div>
