@@ -12,7 +12,10 @@ const Reservation = () => {
     (state) => state.reservations.reservation
   );
   const tourInformation = useSelector((state) => state.tours.tour);
+  const userInfo = useSelector((state) => state.userInfo.user);
+  localStorage.setItem("user_id", userInfo.id);
   console.log(reservationShow);
+  
   const handleClick = () => {
     window.location.href = "/reservationForm";
   };

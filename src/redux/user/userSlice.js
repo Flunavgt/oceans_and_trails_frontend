@@ -5,16 +5,24 @@ const apiUrl = "https://oceans-api.onrender.com/api/v1/users/";
 export const getProfile = createAsyncThunk(
     "users/getProfile",
     async () => {
-        const response = await fetch(apiUrl, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: localStorage.getItem("token"),
-            },
-        });
-        const data = response.json();
-        return data;
-    }
+        if(!localStorage.getItem("token")){
+            return
+        }
+        else{
+
+            const response = await fetch(apiUrl, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: localStorage.getItem("token"),
+                },
+            }
+            );
+        
+            const data = response.json();
+            return data;
+        }
+        }
 );
 
 const initialState = {
