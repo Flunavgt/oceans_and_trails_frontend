@@ -20,7 +20,7 @@ const Tour = () => {
   return (
     <>
 
-      <div className="container">
+      <div className="tour-container">
         <span style={styleName}>Welcome {fullName}</span>
 
         <div className="title-main">
