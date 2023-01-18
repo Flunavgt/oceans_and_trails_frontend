@@ -75,6 +75,7 @@ nav {
   padding: 10px 1rem;
   border-radius: 5px;
   margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
 }
 
 .nav-link:hover {

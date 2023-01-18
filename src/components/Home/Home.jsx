@@ -11,17 +11,14 @@ const handleLogout = () => {
 const Splash = () => {
   return (
     <div className="splash">
-      <div className="splashNav">
-        <i className="fa-solid fa-glass fa-solid fa-magnifying-glass"></i>
-      </div>
       <div className="content">
         <h1 className="splashTitle">Oceans & Trails</h1>
         <h3 className="splashSubTitle">Explore the world with us</h3>
         <div className="splash-content">
           <h5 className="paragraph">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ex
-            necessitatibus enim quas eligendi suscipit assumenda illum quia
-            accusantium sint.
+          Take it all in! Travel Talk offers 4 and 5-star accommodations; 
+          air-conditioned buses and various other modes of transport depending on the tour so, 
+          even though you may be a backpacker, you’re not treated like one.
           </h5>
         </div>
         {localStorage.getItem("token") ? (
