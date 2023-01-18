@@ -16,6 +16,7 @@ const ICON_SIZE = 20;
 const handleLogout = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("user");
+  localStorage.removeItem("user_id");
   window.location.href = "/";
 };
 
@@ -36,7 +37,7 @@ function Navbar({ visible, show }) {
           {!visible ? <FaAngleRight size={30} /> : <FaAngleLeft size={30} />}
         </button>
         <div>
-          <h3 className="logo-title">Oceans</h3>
+          <h3 className="logo-title">Oceans and Trails</h3>
           <NavLink className="" to="/">
             {/* <img src={("../assets/Images/logo.png")} alt="logo" /> */}
           </NavLink>

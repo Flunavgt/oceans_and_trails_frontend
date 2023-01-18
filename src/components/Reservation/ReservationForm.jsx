@@ -1,17 +1,24 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
 import { postReservation } from "../../redux/reservations/reservationsSlice";
-import '../../styles/registrationForm.css' 
+
+import { Navigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 
 const ReservationForm = () => {
+    const userInfo = useSelector((state) => state.userInfo.user);
+    console.log(userInfo)
+    
     const dispatch = useDispatch();
     const [reservationData, setReservationData] = useState({
         startDate: "",
         endDate: "",
         tour_id: "",
-        user_id: ""
+        user_id: userInfo.id,
     })
+
+    // console.log(props.tourData)
 
     const handleChange = (e) => {
         setReservationData({...reservationData, [e.target.name]: e.target.value})
@@ -26,6 +33,7 @@ const ReservationForm = () => {
     console.log(reservationData)
 
     return (
+
 
       <div className="wrapper">
         <form className="container" onSubmit={handleSubmit}>
@@ -64,6 +72,7 @@ const ReservationForm = () => {
         </form>
       </div>
     );
+
 
 }
 

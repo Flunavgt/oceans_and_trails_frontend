@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import { postSignIn } from "../../redux/reducer/registration";
+import { getProfile } from "../../redux/reducer/registration";
 import { useIsAuthenticated } from "../../redux/hooks";
+import { useSelector } from "react-redux";
 
 import "../../styles/signIn.css";
 
@@ -13,6 +15,8 @@ function SignIn() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const authenticated = useIsAuthenticated();
+
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = {
@@ -21,6 +25,7 @@ function SignIn() {
     };
 
     if (loading) {
+      
       return;
     }
     setLoading(true);
@@ -33,6 +38,7 @@ function SignIn() {
       });
   };
   if (authenticated) {
+    const userInfo = useSelector((state) => state.userInfo.user);
     return <Navigate to="/tours" />;
   }
 

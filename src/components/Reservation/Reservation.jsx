@@ -1,20 +1,34 @@
 
-import React from "react";
-import { useSelector } from "react-redux";
-import { removeItem } from "../../redux/reservations/reservationsSlice";
-import { useDispatch } from "react-redux";
-import postReservation from "../../redux/reservations/reservationsSlice";
+import React from 'react'
+import { useSelector } from 'react-redux'
+import moment from 'moment';
+import { removeItem } from '../../redux/reservations/reservationsSlice';
+import { useDispatch } from 'react-redux';
+import {deleteReservation} from '../../redux/reservations/reservationsSlice';
 
 
 const Reservation = () => {
-  const dispatch = useDispatch();
-  const reservationShow = useSelector(
-    (state) => state.reservations.reservation
-  );
+const dispatch = useDispatch();
+  const reservationShow = useSelector((state) => state.reservations.reservation);
+  const tourInformation = useSelector((state) => state.tours.tour);
+  console.log(reservationShow);
 
   const handleClick = () => {
-    window.location.href = "/reservationForm";
-  };
+    window.location.href = "/reservationForm"
+  }
+
+  const handleDelete = (id) => {
+    
+    if (window.confirm("Are you sure you want to delete this reservation?")) {
+      dispatch(deleteReservation(id))
+      dispatch(removeItem(id));
+      window.alert("Reservation Deleted");
+    }
+    window.location.reload();
+  }
+
+
+
 
   return (
 
@@ -26,14 +40,25 @@ const Reservation = () => {
           <h4>Please Select from the List of Reservations</h4>
           <span className="dot">..........</span>
 
-          {reservationShow.map((res) => {
-            return (
-              <div key={res.id} className="card">
-                <div className="imgBx">
-                  <p>{res.tour_id}</p>
-                  <p>{res.user_id}</p>
-                  <p>{res.startDate}</p>
-                  <p>{res.endDate}</p>
+          {
+            reservationShow.map((res) => {
+              return (
+                <div key={res.id} className="card">
+                  <div className="imgBx">
+                    {
+                      tourInformation.map((tour) => {
+                        if (tour.id === res.tour_id) {
+                          return (
+                            <p key={tour.id}>Tour Name: {tour.tourName}</p>
+                          )
+                        }
+                    }
+                    )}
+                    <p>{res.tourName}</p>
+                    <p>Reservation Start Date: {moment((res.startDate)).format('DD/MM/YYYY')}</p>
+                    <p>Reservation End Date: {moment((res.endDate)).format('DD/MM/YYYY')}</p>
+                  </div>
+                  <button onClick={()=>{handleDelete(res.id)}}>Delete Res</button>
 
                 </div>
                 <button

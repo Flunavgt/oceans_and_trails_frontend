@@ -3,12 +3,26 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../../styles/tour.css";
 
+const styleName = {
+  marginRight: '10px',
+  color:'tomato',
+  fontSize:'24px',
+  fontWeight:'bold',
+}
+
 const Tour = () => {
   const tourShow = useSelector((state) => state.tours.tour);
+  const userInfo = useSelector((state) => state.userInfo.user);
+
+  localStorage.setItem("user_id", userInfo.id)
+  const fullName = userInfo.name[0].toUpperCase() + userInfo.name.slice(1);
 
   return (
     <>
-      <div className="tour-container">
+
+      <div className="container">
+        <span style={styleName}>Welcome {fullName}</span>
+
         <div className="title-main">
           <h2>Latest Tours</h2>
           <h4>Please Select from the List of Tours</h4>
