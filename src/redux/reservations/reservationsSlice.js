@@ -10,6 +10,7 @@ export const getReservations = createAsyncThunk(
   async () => {
     if (!localStorage.getItem('token')) { /* eslint-disable */
     }
+    else{
     const response = await fetch(`${apiUrl}/${userId}/${childUrl}`, {
       method: 'GET',
       headers: {
@@ -19,6 +20,7 @@ export const getReservations = createAsyncThunk(
     });
     const data = await response.json();
     return data;
+  }
   },
 );
 

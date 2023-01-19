@@ -10,19 +10,14 @@ import { useSelector } from "react-redux";
 const ReservationForm = () => {
   const { id } = useParams();
   const {state}= useLocation();
-  console.log(id)
     const userInfo = useSelector((state) => state.userInfo.user);
-    console.log(userInfo)
-    
     const dispatch = useDispatch();
     const [reservationData, setReservationData] = useState({
         startDate: "",
         endDate: "",
-        tour_id: "",
+        tour_id: state,
         user_id: userInfo.id,
     })
-
-    // console.log(props.tourData)
 
     const handleChange = (e) => {
         setReservationData({...reservationData, [e.target.name]: e.target.value})
@@ -34,8 +29,7 @@ const ReservationForm = () => {
         dispatch(postReservation(reservationData))
         window.location.href = '/my_reservation'
     }
-    console.log(reservationData)
-
+    
     return (
       <div className="wrapper">
         <form className="container" onSubmit={handleSubmit}>

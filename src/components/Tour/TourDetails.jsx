@@ -17,7 +17,6 @@ const TourDetails = () => {
     <ReservationForm tourData={tourData} />;
     window.location.href = "/reservation";
   };
-  console.log(pepito);
 
   return (
     <div>
