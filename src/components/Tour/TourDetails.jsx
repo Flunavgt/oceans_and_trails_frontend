@@ -40,8 +40,8 @@ const TourDetails = () => {
       })}
     
     </div>
-    <Link to="/reservation" className="text-link">
-        <span className="reserve-link">Reserve Tour</span>
+    <Link to="/reservation" className="text-link" >
+        <span className="reserve-link" id ={parseInt(id)}>Reserve Tour</span>
       </Link>
     </div>
   );

@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 
 
 const ReservationForm = () => {
+  const { id } = useParams();
+  console.log(id)
     const userInfo = useSelector((state) => state.userInfo.user);
     console.log(userInfo)
     
