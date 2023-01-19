@@ -3,11 +3,12 @@ import { useState } from "react";
 import { postReservation } from "../../redux/reservations/reservationsSlice";
 
 import { Navigate, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-
 
 const ReservationForm = () => {
   const { id } = useParams();
+  const {state}= useLocation();
   console.log(id)
     const userInfo = useSelector((state) => state.userInfo.user);
     console.log(userInfo)
@@ -57,9 +58,9 @@ const ReservationForm = () => {
               <input
                 type="text"
                 name="tour_id"
-                value={reservationData.tour_id}
+                value={state}
                 onChange={handleChange}
-                placeholder="Tour ID"
+                placeholder={state}
               />
               <input
                 type="text"

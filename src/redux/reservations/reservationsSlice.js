@@ -9,19 +9,17 @@ export const getReservations = createAsyncThunk(
   'reservations/getReservations',
   async () => {
     if (!localStorage.getItem('token')) {
-
-    } else {
-      const response = await fetch(`${apiUrl}/${userId}/${childUrl}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: localStorage.getItem('token'),
-        },
-      });
-      const data = await response.json();
-      console.log(data);
-      return data;
     }
+    const response = await fetch(`${apiUrl}/${userId}/${childUrl}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+    return data;
   },
 );
 
