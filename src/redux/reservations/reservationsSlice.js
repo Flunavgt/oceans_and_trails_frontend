@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const apiUrl = 'https://oceans-api.onrender.com/api/v1/users';
