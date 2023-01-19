@@ -114,6 +114,9 @@ Example command:
 Clone this repository to your desired folder : git clone https://github.com/Flunavgt/oceans_and_trails_backend.git
 
 ```sh
+git clone https://github.com/Flunavgt/oceans_and_trails_backend.git 
+```
+```sh
  run bundle 
 ```
 ```sh
@@ -131,13 +134,17 @@ clone frontend app: git clone https://github.com/Flunavgt/oceans_and_trails_fron
 
 ```sh
 git clone https://github.com/Flunavgt/oceans_and_trails_frontend.git
-run npm i
 ```
+Add Dependency
 ```sh
 run npm i
 ```
-in the terminal for the front end: run npm start and when asked for a new port for local host type "y"
+in the terminal for the front end: run npm start and 
 
+```sh
+run npm start
+```
+when asked for a new port for local host type "y"
 
  -->
 
