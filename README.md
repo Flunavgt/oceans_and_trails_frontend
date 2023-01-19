@@ -98,7 +98,7 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 Make sure you have installed locally:
-Ruby 
+Ruby and
 Nodejs
 
 <!--
