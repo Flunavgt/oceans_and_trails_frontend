@@ -42,6 +42,7 @@ const Tour = () => {
                 </div>
                 <div className="content">
                   <h4>{tour.tourName}</h4>
+                  <h4>Price: ${tour.price}</h4>
                   <span className="dot">..........</span>
                   <div className="description">
                     <p>{tour.description}</p>

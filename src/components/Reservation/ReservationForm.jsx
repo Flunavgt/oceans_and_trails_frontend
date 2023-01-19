@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { postReservation } from "../../redux/reservations/reservationsSlice";
 
 import { Navigate, useParams } from "react-router-dom";
@@ -36,8 +37,6 @@ const ReservationForm = () => {
     console.log(reservationData)
 
     return (
-
-
       <div className="wrapper">
         <form className="container" onSubmit={handleSubmit}>
           <h1 className="brand-title">Make a Reservation</h1>
@@ -55,21 +54,11 @@ const ReservationForm = () => {
                 value={reservationData.endDate}
                 onChange={handleChange}
               />
-              <input
-                type="text"
-                name="tour_id"
-                value={state}
-                onChange={handleChange}
-                placeholder={state}
-              />
-              <input
-                type="text"
-                name="user_id"
-                value={reservationData.user_id}
-                onChange={handleChange}
-                placeholder="User ID"
-              />
+
               <input type="submit" value="Submit" />
+              <Link className="back text-link" to="/tours">
+                <p className="nav-back">← Back</p>
+              </Link>
             </div>
           </div>
         </form>

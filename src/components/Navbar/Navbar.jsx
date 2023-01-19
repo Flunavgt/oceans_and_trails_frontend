@@ -49,16 +49,7 @@ function Navbar({ visible, show }) {
             <NavLink to="/tours" className="nav-link" onClick={() => show(!visible)}>
               <FaChartBar size={ICON_SIZE} />
               <span>Tour </span>
-            </NavLink>
-
-            {localStorage.getItem("token") ? (
-              <NavLink to="/reservation" className="nav-link" onClick={() => show(!visible)}>
-                <FaShoppingCart size={ICON_SIZE} />
-                <span>Reservation</span>
-              </NavLink>
-            ) : (
-              ""
-            )}
+            </NavLink>            
             {localStorage.getItem("token") ? (
               <NavLink to="/my_reservation" className="nav-link" onClick={() => show(!visible)}>
                 <FaShoppingCart size={ICON_SIZE} />
