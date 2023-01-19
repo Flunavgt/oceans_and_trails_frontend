@@ -113,18 +113,29 @@ Example command:
 
 Clone this repository to your desired folder : git clone https://github.com/Flunavgt/oceans_and_trails_backend.git
 
-run bundle install run npm i
-
+```sh
+ run bundle 
+```
+```sh
+install run npm i
+```
 create application.yml under config and set Username and password for DB
 
+```sh
 run rails db:create
-
+```
+```sh
 run rails s
-
+```
 clone frontend app: git clone https://github.com/Flunavgt/oceans_and_trails_frontend.git
 
+```sh
+git clone https://github.com/Flunavgt/oceans_and_trails_frontend.git
 run npm i
-
+```
+```sh
+run npm i
+```
 in the terminal for the front end: run npm start and when asked for a new port for local host type "y"
 
 
