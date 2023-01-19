@@ -3,16 +3,14 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ReservationForm from "../Reservation/ReservationForm";
-import '../../styles/tour.css'
+import "../../styles/tour.css";
 
 const TourDetails = () => {
   const { id } = useParams();
 
   const tourDetail = useSelector((state) => state.tours.tour);
-  console.log(tourDetail);
 
   const tourData = tourDetail.filter((tour) => tour.id === parseInt(id));
-  console.log(tourData);
 
   const pepito = parseInt(id);
   const handleReserve = () => {

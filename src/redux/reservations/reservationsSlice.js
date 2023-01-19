@@ -8,7 +8,7 @@ const userId = localStorage.getItem('user_id');
 export const getReservations = createAsyncThunk(
   'reservations/getReservations',
   async () => {
-    if (!localStorage.getItem('token')) {
+    if (!localStorage.getItem('token')) { /* eslint-disable */
     }
     const response = await fetch(`${apiUrl}/${userId}/${childUrl}`, {
       method: 'GET',
@@ -18,7 +18,6 @@ export const getReservations = createAsyncThunk(
       },
     });
     const data = await response.json();
-    console.log(data);
     return data;
   },
 );
