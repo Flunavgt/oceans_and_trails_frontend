@@ -6,7 +6,6 @@ export const getTourData = createAsyncThunk(
   async () => {
     const response = await fetch(ApiData);
     const data = await response.json();
-    // console.log(data);
     return data;
   }
 );

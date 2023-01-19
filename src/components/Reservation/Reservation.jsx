@@ -14,11 +14,7 @@ const Reservation = () => {
   const tourInformation = useSelector((state) => state.tours.tour);
   const userInfo = useSelector((state) => state.userInfo.user);
   localStorage.setItem("user_id", userInfo.id);
-  console.log(reservationShow);
   
-  const handleClick = () => {
-    window.location.href = "/reservationForm";
-  };
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this reservation?")) {
       dispatch(deleteReservation(id));

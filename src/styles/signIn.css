@@ -1,5 +1,6 @@
 /*  style should be here */
 .wrapper {
+  margin: 5rem auto;
   display: flex;
   justify-content: center;
   align-items: center;

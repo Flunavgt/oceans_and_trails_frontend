@@ -1,16 +1,16 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+/* eslint-disable */
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const apiUrl = 'https://oceans-api.onrender.com/api/v1/users/';
+const apiUrl = "https://oceans-api.onrender.com/api/v1/users/";
 
-export const getProfile = createAsyncThunk('users/getProfile', async () => {
-  if (!localStorage.getItem('token')) {
-
+export const getProfile = createAsyncThunk("users/getProfile", async () => {
+  if (!localStorage.getItem("token")) {
   } else {
     const response = await fetch(apiUrl, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
       },
     });
 
@@ -21,21 +21,21 @@ export const getProfile = createAsyncThunk('users/getProfile', async () => {
 
 const initialState = {
   user: [],
-  status: 'idle',
+  status: "idle",
 };
 
 export const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getProfile.fulfilled, (state, action) => {
         state.user = action.payload;
-        state.status = 'succeeded';
+        state.status = "succeeded";
       })
       .addCase(getProfile.pending, (state) => {
-        state.status = 'loading';
+        state.status = "loading";
       });
   },
 });
