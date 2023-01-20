@@ -35,8 +35,7 @@
   justify-content: center;
   align-items: center;
   grid-gap: 0.5rem;
-
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 
 .card {
@@ -155,4 +154,38 @@
 
 .testingBTN {
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    display: block;
+    width: 100%;
+    border: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .tour-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .imgBx {
+    display: flex;
+    border: none;
+    align-items: center;
+  }
+
+  .content {
+    margin: 0;
+    justify-content: flex-start;
+  }
+
+  .img {
+    align-self: center;
+  }
 }
