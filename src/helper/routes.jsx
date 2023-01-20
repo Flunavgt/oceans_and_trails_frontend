@@ -4,7 +4,7 @@ import { history } from './helpers/history';
 import RegistrationForm from "../components/RegistrationForm/registrationForm";
 import RouteGuard from "../components/RouteGuard";
  
-function Routes() {
+const Routes = () => {
    return (
        <Router history={history}>
            <Switch>

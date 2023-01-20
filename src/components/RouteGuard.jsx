@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
  
 const RouteGuard = ({ component: Component, ...rest }) => {
  
-   function hasJWT() {
+   const hasJWT = () => {
        let flag = false;
  
        //check user has JWT token
