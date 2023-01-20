@@ -20,7 +20,7 @@ const handleLogout = () => {
   window.location.href = "/";
 };
 
-function Navbar({ visible, show }) {
+const Navbar = ({ visible, show }) => {
   return (
     <>
       <div className="mobile-nav">

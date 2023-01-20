@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { postSignUp } from '../../redux/reducer/registration';
 import "../../styles/signIn.css";
 
-function SignUp() {
+const SignUp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [name, setName] = useState('');

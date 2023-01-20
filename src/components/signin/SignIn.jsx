@@ -8,7 +8,7 @@ import { getProfile } from "../../redux/reducer/registration";
 
 import "../../styles/signIn.css";
 
-function SignIn() {
+const SignIn = () => {
   const authenticated = useIsAuthenticated();
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");

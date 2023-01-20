@@ -14,7 +14,7 @@ import ReservationForm from './components/Reservation/ReservationForm';
 import TourDetails from './components/Tour/TourDetails';
 
 
-function App(tour) {
+const App = (tour) => {
 	const [navVisible, showNavbar] = useState(false);
 	return (
     <BrowserRouter>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { setAuthToken } from '../setAuthToken()';
 import '../../styles/registrationForm.css';
 
-function RegistrationForm() {
+const RegistrationForm = () => {
     const [user, setUser] = useState({
         name: 'tester1',
         email: 'tester1@tester.com',
