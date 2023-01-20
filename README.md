@@ -61,19 +61,12 @@
   </ul>
 </details>
 
-<!-- LIVE DEMO -->
-
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-- [Live Demo Link](https://oceans-api.onrender.com) 
 <!-- Features -->
 
 <!-- ### Key Features <a name="key-features"></a> -->
 
 May find the link to:
-[Back end](https://github.com/Flunavgt/oceans_and_trails_backend)
+[Front end](https://github.com/Flunavgt/oceans_and_trails_frontend)
 
 ## Kanban Board 
 
@@ -97,7 +90,6 @@ Front End initial state
 ## 💻 Getting Started <a name="getting-started"></a>
 
 
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
@@ -105,7 +97,7 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 Make sure you have installed locally:
-Ruby and
+Ruby 
 Nodejs
 
 <!--
@@ -120,38 +112,56 @@ Example command:
 
 Clone this repository to your desired folder : git clone https://github.com/Flunavgt/oceans_and_trails_backend.git
 
+Execute on console making sure you are in the correct directory:
 ```sh
-git clone https://github.com/Flunavgt/oceans_and_trails_backend.git 
+bundle install
+npm i
 ```
-```sh
- run bundle 
-```
-```sh
-install run npm i
-```
-create application.yml under config and set Username and password for DB
 
+-create a file named application.yml under config folder and write the following Variables:
 ```sh
-run rails db:create
+USER_NAME = “xxx” (xxx replace with your Postgres user name)
+PASSWORD = “xxx” (xxx replace with your Postgres password)
+```
+-On console execute
+```sh
+rails db:create
+rails db:migrate
+rails db:seed
+```
+
+-Create Master key:
+```sh
+EDITOR="mate --wait" bin/rails credentials:edit
 ```
 ```sh
-run rails s
+rails s
 ```
+
 clone frontend app: git clone https://github.com/Flunavgt/oceans_and_trails_frontend.git
 
+Navigate to correct directory:
+
+Add Dependencies
 ```sh
-git clone https://github.com/Flunavgt/oceans_and_trails_frontend.git
+npm i
 ```
-Add Dependency
-```sh
-run npm i
-```
-in the terminal for the front end: run npm start and 
 
 ```sh
-run npm start
+npm run dev
 ```
 when asked for a new port for local host type "y"
+
+
+## Testing
+You may test by executing:
+
+rspec ./spec/models
+
+rspec ./spec/requests
+
+rails rswag   
+
 
  -->
 
@@ -190,11 +200,9 @@ when asked for a new port for local host type "y"
 
 <!-- FUTURE FEATURES -->
 
-## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
-* [ Murat Korkmaz](https://www.behance.net/muratk)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
