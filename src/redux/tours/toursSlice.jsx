@@ -1,12 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-const ApiData = "http://localhost:3000/api/v1/tours";
+const ApiData = "https://oceans-api.onrender.com/api/v1/tours";
 
 export const getTourData = createAsyncThunk(
   "tours/getTours",
   async () => {
     const response = await fetch(ApiData);
     const data = await response.json();
-    // console.log(data);
     return data;
   }
 );

@@ -1,4 +1,4 @@
-.container {
+.tour-container {
   width: 75%;
   height: 100%;
   background: #fff;
@@ -30,18 +30,19 @@
 }
 
 .tour-wrapper {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
+  grid-gap: 0.5rem;
   flex-wrap: wrap;
 }
 
 .card {
   width: 300px;
-  height: 400px;
+  height: 550px;
   background: #fff;
-  margin: 2rem;
+  margin: 1rem;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -77,6 +78,10 @@
   text-align: center;
 }
 
+.content h4 {
+  margin: 0 0.5rem;
+}
+
 .icons {
   display: flex;
   flex-direction: row;
@@ -89,4 +94,98 @@
   font-size: 1.2rem;
   color: rgb(163, 162, 162);
   padding: 5px;
+}
+
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+  margin-bottom: 2rem;
+}
+
+.description {
+  text-decoration: none;
+  color: #000;
+  text-align: left;
+}
+
+.tour-detail {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.back {
+  margin-left: 100px;
+}
+
+.nav-back {
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.tour-image {
+  width: 100vh;
+  height: 50vh;
+}
+
+.reserve-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 20px;
+  background-color: #000;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.testingBTN {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    display: block;
+    width: 100%;
+    border: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .tour-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .imgBx {
+    display: flex;
+    border: none;
+    align-items: center;
+  }
+
+  .content {
+    margin: 0;
+    justify-content: flex-start;
+  }
+
+  .img {
+    align-self: center;
+  }
 }
